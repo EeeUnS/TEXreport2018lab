@@ -302,8 +302,8 @@ Deep Learning의 성능을 최적화 시키기 위한 가장 효율적인 네트
  \begin{table}
     \centering
         \begin{tabular}{|c|c|}
-            \hline\hline
-            Phase 1 & Phase 2 \\ \hline
+            \hline
+            \rowcolor{lightgray} Phase 1 & Phase 2 \\ \hline
             Gabor magnitude & LBP \\ \hline
             Gabor magnitude + phase  & LBP \\ \hline
             Log-Gabor &  LBP \\ \hline
@@ -312,7 +312,7 @@ Deep Learning의 성능을 최적화 시키기 위한 가장 효율적인 네트
             Sobel or Gabor + Sobel & LBP \\ \hline 
             Gabor Volume  & LBP \\ \hline
             Discriminantly filtered image & LBP \\ \hline
-            \hline\hline
+            \hline
         \end{tabular}
 	\caption{Openpose의 인터프리터 셋팅 }
 \end{table}
@@ -337,7 +337,8 @@ Deep Learning의 성능을 최적화 시키기 위한 가장 효율적인 네트
             &   $-$ two lightened CNN models with MFM, inception layer and stacked convolution \\
             &   $-$ one CNN for canonical view recovery and another CNN for feature extraction  \\
             &   $-$ CNNs combined with stacked auto-encoder \\
-            \hline        \end{tabular}
+            \hline        
+        \end{tabular}
 \end{table}
 
 \section{얼굴 교체 및 인식 기술 관련 최근 국내외 연구동향}
@@ -745,12 +746,13 @@ RAM : 16GB
 
 \section{ 2D-Faceswap 모델 실행 환경과 과정 및 결과}
 
- 요구사항 : opencv 및 dlib 설치 필요
+ 1.요구사항 :  opencv 및 dlib 설치 필요
+ 
+ 2.인터프리터 (conda)환경
 
  \begin{table}
     \centering
         \begin{tabular}{|c|c|}
-            
             \hline\hline
             dlib & 19.16.0 \\ \hline
             numpy & 1.15.4 \\             \hline
@@ -760,7 +762,6 @@ RAM : 16GB
             scipy  &  1.1.0\\
             \hline\hline
         \end{tabular}
- 
 	\caption{2D-Faceswap의 인터프리터 세팅  }
 \end{table}
 
@@ -775,13 +776,16 @@ RAM : 16GB
     \item 서버에서 2D-Faceswap 알고리즘을 동영상에 적용시킨다. (2D-Faceswap 알고리즘의 적용과정은 제2장에 있다.)
     \item 2D-Faceswap 알고리즘이 적용된 동영상을 웹 상에 표시한다.
 \end{enumerate}
- 이때 2D-Faceswap 알고리즘은 영상에 여러명의 사람이 등장할 경우 전체 사람의 얼굴을 변화시킨다는 단점이 있다. 따라서 우리는 2D-Faceswap 모델과 Openpose를 이용하여 여러 사람 중 한사람의 얼굴만을 합성시켜야 한다.
 
+이때 2D-Faceswap 알고리즘은 영상에 여러 명의 사람이 등장할 경우 전체 사람의 얼굴을 변화시킨다는 단점이 있다. 따라서 우리는 2D-Faceswap 모델과 Openpose를 이용하여 여러 사람 중 한사람의 얼굴만을 합성시켜야 한다.
+	
  
 
  \section{ Openpose 를 활용한 Faceswap 모델 실행 환경과 과정 및 결과}
 
- 요구사항 : dlib 및 opencv 필요
+ 1. 요구사항 :  dlib 및 opencv 필요
+
+ 2.인터프리터 (conda)환경
 
  \begin{table}
     \centering
@@ -806,22 +810,20 @@ RAM : 16GB
 
 웹에 접속하여 Openpose를 활용한 Faceswap 모델 적용하는 방법은 다음과 같다.
 
-사용자는 먼저 바꾸고 싶은 얼굴과 합성하고 싶은 얼굴을 업로드한다.
-
-합성하고자하는 동영상을 선택한다.
-
-합성하고자 하는 동영상에서 사용자가 올린 사진과 비교하여 바꾸고 싶은 얼굴을 감지한다.
-
-얼굴을 감지 한 후 2절에서 사용한 2D-Faceswap을 이용하여 얼굴을 합성한다.
-
-합성한 결과를 웹 상에 표시한다.
+\begin{enumerate}
+    \item 사용자는 먼저 바꾸고 싶은 얼굴과 합성하고 싶은 얼굴을 업로드한다.
+    \item 합성하고자하는 동영상을 선택한다.
+    \item 합성하고자 하는 동영상에서 사용자가 올린 사진과 비교하여 바꾸고 싶은 얼굴을 감지한다.
+    \item 얼굴을 감지 한 후 2절에서 사용한 2D-Faceswap을 이용하여 얼굴을 합성한다.
+    \item 합성한 결과를 웹 상에 표시한다.
+\end{enumerate}
 
 \section{딥페이크(Original-High-Resolution Model) 모델 실행 환경과 과정 및 결과}
 
- 요구사항 : Nvidia GPU 사용 시 CUDA 세팅
+ 1.요구사항 : Nvidia GPU 사용 시 CUDA 세팅
 
 
-인터프리터 (conda)환경 -Nvidia GPU사용 CUDA 세팅
+2. 인터프리터 (conda)환경 -Nvidia GPU사용 CUDA 세팅
 
 \begin{table}
     \centering
@@ -870,43 +872,32 @@ RAM : 16GB
 
 
 
- 실행과정 :
+ 3. 실행과정 :
 
 Faceswap을 위해서 사용한 4가지 알고리즘 중 deepfake 알고리즘을 사용하여 얼굴을 바꿀 데이터를 직접 학습시켜 사용자에게 얼굴을 합성한 결과물을 자연스럽고 높은 퀄리티로 사용자들에게 보여준다.
 \begin{enumerate}
     \item  사용자는 먼저 정면 동영상 A와 얼굴 A를 B로 바꿔주는 트레이닝 된 모델을 준비한다.
-
     \item 웹 상에 얼굴 정면이 들어가 있는 동영상 A와 모델을 업로드한후 결과가 저장될 폴더를 정한다..
-    
-    \item 서버에서 deepfake 알고리즘을 동영상에 적용시킨다. 
-    
-       (deepfake 알고리즘의 적용과정은 제4장에 있다.)
-    
+    \item 서버에서 deepfake 알고리즘을 동영상에 적용시킨다.  (deepfake 알고리즘의 적용과정은 제4장에 있다.)
     \item deepfake 알고리즘이 적용된 동영상을 웹 상에 표시하고 결과물을 폴더에 저장시킨다..
-        
 \end{enumerate}
 
 세부 작동방식 :
 
-동영상 A를 사진으로 잘게 자른다. 
-
-모델을 사용해서 각 사진의 A의 얼굴을 B로 바꾼다. 
-
-사진을 다시 동영상으로 합친 후 웹에서 실행하고 폴더에 저장한다
+\begin{enumerate}
+    \item  동영상 A를 사진으로 잘게 자른다. 
+    \item  모델을 사용해서 각 사진의 A의 얼굴을 B로 바꾼다. 
+    \item  사진을 다시 동영상으로 합친 후 웹에서 실행하고 폴더에 저장한다
+\end{enumerate}
 
 \section{생성적 적대 신경망(GAN) 모델 실행 환경과 과정 및 결과}
 
- 1. 실행 환경
+ 1. 요구사항 : 아나콘다 가상환경 구축
 
- 가. 아나콘다 가상환경 구축
 
-  윈도우 환경에서 python 모듈인 pytorch 모듈이 설치가 안 되므로 Anconda를 이용하여 가상환경을 구축하였습니다. 아나콘다로 파이썬 3.6버전의 가상환경을 생성하였습니다.
-
- 나. 파이썬 라이브러리 설치
-
-라이브러리 이름
-
-버젼
+ 윈도우 환경에서 python 모듈인 pytorch 모듈이 설치가 안 되므로 Anconda를 이용하여 가상환경을 구축하였고, 아나콘다로 파이썬 3.6버전의 가상환경을 생성하였다.
+  
+ 2. 인터프리터 (conda)환경
 
 \begin{table}
     \centering
@@ -932,11 +923,11 @@ Faceswap을 위해서 사용한 4가지 알고리즘 중 deepfake 알고리즘�
             torch & 0.4.1  \\ \hline
             \hline\hline
         \end{tabular}
-	\caption{deepfake의 인터프리터 셋팅 }
+	\caption{GAN의 인터프리터 셋팅 }
 \end{table}
 
 
-2. 실행 과정
+3. 실행 과정
 
  가. 실행코드 변경
 
@@ -973,23 +964,27 @@ Faceswap을 위해서 사용한 4가지 알고리즘 중 deepfake 알고리즘�
 
 \section{ COX Cinema 설명 + Branch 기능}
 
-광고와 사용자 간의 상호작용이 가능하게 하는 Cox Cinema  
+1. 정의
+
+COX cinema란 광고와 사용자 간의 상호작용이 가능하게 하는 인터렉티브 미디어 플랫폼입니다. 	
+
+
+2. 세부내용
 
 COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 일반적으로 생각하는 영상과는 다른 영상을 만들 수 있게 해준다. 일반적인 영상이 영상제작자가 사용자에게 영상의 결과를 제공하는 다소 단방향적인 것이었다면, COX Cinema의 Branch Service는 영상제작자가 여러 Branch를 만들어서 영상을 만들게 한다. 일반적인 영상을 보는 사용자는 영상을 보고 느끼는 것이 다라면, 사용자가 COX Cinema를 이용하면 직접 영상의 진행에 참여하고 사용자가 결과를 만드는 것에 참여하는 느낌을 받게 한다.     
 
 COX Cinema – Branch 기능
-
+Android 화면 – Branch 
 Web 화면 – Branch 기능
 
-Android 화면 – Branch 
-
 \section{ COX Cinema 기능 구현}
-
-시점 지정
+영상제작자가 플랫폼 상에서 편집이 이루어질 때에 시점과 범위의 두 가지 관점에서 Interactive기능이 구현된다. Interactive 기능은 영상제작자가 사용자에게 어떤 영상에서 영상제작자와 사용자간의 대화라고 볼 수 있다. push, call, image 등 여러 가지 Interactive기능을 만들었으며 자세한 사항은 아래에 설명한다.  
+ 
+1.시점 지정
 
 영상제작자가 원하는 시점(시간)에서 Interactive기능을 부여한다. Interactive 기능은 영상제작자가 사용자에게 어떤 영상에서 영상제작자와 사용자간의 대화라고 볼 수 있다. push, call, image 등 여러 가지 Interactive기능을 만들었으며 자세한 사항은 아래에 설명한다.  
 
-Push 
+1) Push 
 
 영상제작자가 사용자에게 메시지를 보내 제작자가 원하는 메시지를 사용자에게 보내는 기능
 
@@ -998,31 +993,30 @@ Push
 android 화면 - push
    web 화면 - push
 
-Push Link 
+2) Push Link 
 
 영상제작자가 사용자에게 링크를 보내 사용자에게 링크접속을 유도하는 기능
-
+   
 android 화면 – pushlink
 
 android 화면 – pushlink 2
 
 web 화면 - pushlink
 
-Morse
+3) Morse
 
 영상제작자가 morse 부호를 설정하여 사용자의 기기에서 소리가 나게 하는 기능
-
 #Morse 동작 pic
 
-Call 
+4) Call 
 
-사용자기기로 영상제작자가 원하는 이름과 전화번호를 설정하여 전화가 가게하는 기능
+사용자기기로 영상제작자가 원하는 이름과 전화번호를 설정하여 전화모드가 구현되는 기능
 
 Web 화면 – Call
 
 android 화면 – Call
 
-Image 
+5) Image 
 
 사용자기기로 영상제작자가 원하는 이미지를 보내주는 기능
 
@@ -1030,32 +1024,35 @@ android 화면 – Image
 
 web 화면 – Image
 
-Motion 
+6 ) Motion 
 
-영상제작자가 사용자에게 기기를 흔들게 하여 영상에 참여하도록 유도하는 기능
+영상제작자가 사용자에게 모바일 기기를 움직이게 하여 영상에 참여하도록 유도하는 기능
 
 web 화면 – Motion
         android 화면 – Motion
-                      Product 
+
+
+7) Product 
 
 사용자가 영상시청중 제품을 구매하게 유도하는 기능 
-
+        
 android 화면 – Product
  web 화면 – Product
 
-범위 지정
 
-Drawing X 안됨
+2. 범위 지정
+
+
+1) Drawing X 안됨
 
 #기능설명
-
 #동작 pic
 
-Linkbox
 
+2) Linkbox
 #기능설명 모바일기기에서 안됨
 
-Vote
+3) Vote
 
 사용자로 하여금 선택권을 주어 투표에 의해 영상이 선택되게 하는 기능.
 
@@ -1103,7 +1100,7 @@ RAM : 16GB
 
 가. BRANCH 기능
 
-여자주인공이 배가 고프니, 밥을 먹으러 가자는 메시지를 받고나서 어떤 음식을 먹을지 선택을 하도록 하기 위하여 사용한 Branch 기능입니다. 이제 COX 애플리케이션을 사용하는 모바일 기기 사용자는 이 기능으로 하여금 어떻게 이야기를 전개할 것인지 선택을 할 수 있게 됩니다. 
+여자주인공이 배가 고프니, 밥을 먹으러 가자는 메시지를 받고나서 어떤 음식을 먹을지 선택을 하도록 하기 위하여 사용한 Branch 기능이다. 이제 COX 애플리케이션을 사용하는 모바일 기기 사용자는 이 기능으로 하여금 어떻게 이야기를 전개할 것인지 선택을 할 수 있게 된다. 
 
 나. PUSH (메세지 기능 )
 
