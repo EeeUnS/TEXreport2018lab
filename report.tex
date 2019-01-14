@@ -10,12 +10,17 @@
 
     \usepackage{syntonly}
     %\syntaxonly
+
 \begin{document}
 
 \tableofcontents
-\listoffigures
-\listoftables
+\newpage
 
+\listoffigures
+\newpage
+
+\listoftables
+\newpage
 
 (표  지)
 
@@ -398,7 +403,7 @@ Deep Learning의 성능을 최적화 시키기 위한 가장 효율적인 네트
 앞서 설명한 Filter-based 방식에서의 단점은 제약이 있는 상황(constraint circumstance)에서만 좋은 결과를 얻는다는 것이다. 예를 들어, illuminate, pose 등의 복합적인(제약이 없는 – unconstraint circumstance) 상황이 추가되면 얼굴 특징을 잘 추출하지 못한다. 이러한 점을 해결하기 위해 연구자들은 주로 Deep Learning 알고리즘(대표적으로 CNN)을 사용하고 있다. 또한 얼굴 검출(인식) 및 특징점 추출 관련 기술에서는 이미 Deep Learning에 기반한 기술이 이전 기술(ex: Filter-based)에 비해 99\%의 정확도를 보이는 등 상당히 좋은 결과를 보이고 있어 이제는 관련 기술 연구에 있어서는 Deep Learning을 필수적으로 사용하게 되었다.
 
 \begin{table}[h!]
-    \centering
+    %\centering
         \begin{tabular}{|c|l|}
             \hline
             \rowcolor{lightgray} Framework &  Details \\ \hline
@@ -762,14 +767,12 @@ RAM : 16GB
         \centering
       %  \includegraphics[scale=0.5]{170920.png}}
     \caption{위 : 원본 / 아래 : 합성}
-    \end{figure}
+\end{figure}
         
+\chapter{ 생성적 적대 신경망(GAN)을 활용한 Faceswap 모델의 기술 분석 및 구현}
 
 
-\Chapter{ 생성적 적대 신경망(GAN)을 활용한 Faceswap 모델의 기술 분석 및 구현}
-
-   \section{ GAN을 활용한 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석}
-
+\section{ GAN을 활용한 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석}
 2014년 'Ian Goodfellow'가 NIPS 학회에서 생성적 적대 신경망인 GAN(Generative Adversarial Nets)을 발표하면서 지도 학습 중심이었던 딥러닝의 패러다임이 비지도 학습으로 바뀌었다. 이후 많은 후속연구과 GAN을 이용한 사례들이 나타나고 있다. 기존 대부분의 인공지능 연구는 사람이 정답을 알려주는 방식인 지도 학습 방식으로 이루어져왔다. 따라서 지도 학습 방식은 학습이 가능하도록 데이터를 가공하는 수작업 과정이 필요하다. 하지만 비지도 학습 방식인 GAN은 인간의 개입이 없이 스스로 두 모델의 경쟁 과정을 거치면서 학습한다. 따라서 대량의 데이터를 가공해야하는 지도 학습 방식의 한계를 극복할 수 있다.
 
 GAN은 두 모델 ‘생성자(G)’와 ‘구분자(D)’의 경쟁을 통해 학습을 진행하고 결과를 만들어낸다. '생성자‘는 데이터를 학습하여 학습에 사용된 데이터의 확률분포를 이용하여 가짜 데이터를 생성하는 것을 목표로 하며 실제에 가까운 가짜 데이터를 생성하도록 학습된다. ’구분자‘는 ’생성자‘가 생성한 가짜 데이터가 실제인지 가짜인지 구분하도록 학습된다.
@@ -854,7 +857,7 @@ GAN을 이용한 얼굴 변형 모델에서는 학습에 데이터를 수집하�
 
 2. 학습 과정에 필요한 얼굴 이미지의 binary mask 생성
 
-학습을 위해 먼저 생성된 얼굴이미지에서 binary mask를 생성하기 위해 python의 face_alignment 패키지와 dlib 패키지를 이용하게 된다.
+학습을 위해 먼저 생성된 얼굴이미지에서 $binary mask$를 생성하기 위해 $python$의 $face_alignment$ 패키지와 $dlib$ 패키지를 이용하게 된다.
 
 Binary mask 생성에 앞서 먼저 얼굴 이미지들을 사람의 정면 이미지처럼 변환하게 된다. dlib 패키지를 통해 얼굴이미지에서 사람의 얼굴 특징점을 파악하고 이 얼굴 특징점들이 사람이 정면을 보고 있는 이미지와 특징점들의 위치가 비슷해지도록 이미지 회전 및 이미지 확대, 축소를 통해 정면 얼굴이미지를 수집한다.
 \begin{figure}[h!] %사진X
@@ -926,7 +929,7 @@ RAM : 16GB
 
 이 모델의 탐색을 통해, 얼굴이 좌우 90도 가까이 돌아가더라도 얼굴이 자연스럽게 변형되는 결과를 확인하였고, 일부 데이터에 장애물이 존재하더라도 어느 정도 보완하여 합성시켜준다는 점 또한 확인하였다. 하지만 이러한 결과를 얻기 위해선 충분한 데이터 셋의 수, 학습시간, 하드웨어의 성능이 필요할 것이다. 또한 얼굴 변형을 하는 소스 영상의 화질이 좋을수록 좋은 결과를 얻을 수 있었다. 하드웨어의 성능이 보장된다면 신경망 층의 크기를 늘린다면 더 세밀한 학습이 진행될 수 있을 것이며 학습 횟수 또한 모델의 성능에 있어서 중요한 요소가 될 수 있다.
 
-\Chapter{ 위 네 가지 기술들과 서버의 연결 및 결과  }
+\chapter{ 위 네 가지 기술들과 서버의 연결 및 결과  }
 
 \section{ 서버설명 + cox 페이지 설명}
 
@@ -1095,7 +1098,7 @@ RAM : 16GB
 	\caption{Openpose의 인터프리터 셋팅 }
 \end{table}
 
-앞서 2절에서 사용한 2D-Faceswap의 경우 영상에서 얼굴이 여러명이 나올 경우 여러명의 얼굴이 동시에 변환된다는 단점이 있다. 따라서 우리는 Tensorflow 의 face_recognition 와 Openpose를 통해서 사람들의 얼굴을 인식한 후 사용자가 추가한 사진과 유사한 얼굴을 감지하여 해당하는 얼굴만을 변환하도록 한다.
+앞서 2절에서 사용한 $2D-Faceswap$의 경우 영상에서 얼굴이 여러명이 나올 경우 여러명의 얼굴이 동시에 변환된다는 단점이 있다. 따라서 우리는 Tensorflow 의 $face_recognition$ 와 Openpose를 통해서 사람들의 얼굴을 인식한 후 사용자가 추가한 사진과 유사한 얼굴을 감지하여 해당하는 얼굴만을 변환하도록 한다.
 
 웹에 접속하여 Openpose를 활용한 Faceswap 모델 적용하는 방법은 다음과 같다.
 
@@ -1246,9 +1249,9 @@ Faceswap을 위해서 사용한 4가지 알고리즘 중 deepfake 알고리즘�
 \end{enumerate}
 3. 실행 결과
 
-#사진
+사진
 
-\Chapter{ COX Cinema 및 interactive 광고 동영상 제작 및 업로드}
+\chapter{ COX Cinema 및 interactive 광고 동영상 제작 및 업로드}
 
 \section{ COX Cinema 설명 + Branch 기능}
 
@@ -1293,7 +1296,7 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
 영상제작자가 사용자에게 메시지를 보내 제작자가 원하는 메시지를 사용자에게 보내는 기능
 
-#PUSH 동작 pic
+PUSH 동작 pic
 
 \begin{figure}[h!]
     \centering
@@ -1331,7 +1334,7 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
     \item  Morse
 
 영상제작자가 morse 부호를 설정하여 사용자의 기기에서 소리가 나게 하는 기능
-#Morse 동작 pic
+Morse 동작 pic
 
     \item  Call 
 
@@ -1408,18 +1411,18 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 \begin{enumerate}
     \item Drawing X 안됨
 
-#기능설명
-#동작 pic
+기능설명
+동작 pic
 
 
     \item Linkbox
-#기능설명 모바일기기에서 안됨
+기능설명 모바일기기에서 안됨
 
     \item Vote
 
 사용자로 하여금 선택권을 주어 투표에 의해 영상이 선택되게 하는 기능.
 
-#동작 pic
+동작 pic
 
 \begin{figure}[h!]
     \centering
@@ -1439,7 +1442,7 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
 \section{ COX Cinema로 만든 영상 예시의 실행환경 및 결과 }
 
-\subsetion{ 실행 테스트 환경 }
+\subsection{ 실행 테스트 환경 }
 
 OS : windows 10 / 64bit
 
@@ -1451,7 +1454,7 @@ RAM : 16GB
 
 모바일 기기의 경우 Android 기기를 이용하여야한다.
 
-\subsetion{ 구성 및 제작 결과}
+\subsection{ 구성 및 제작 결과}
 
 \begin{enumerate}
    
@@ -1561,7 +1564,7 @@ RAM : 16GB
           %  \includegraphics[scale=0.5]{170920.png}}
             \caption{web 화면 – Vote}
         \end{figure} 
-        
+
 마지막으로 이 기능은 치킨 메뉴의 줄거리가 전개될 때에 사용자가 치킨이 먹고 싶어지겠다는 생각이 들 때 즈음, 곧바로 주문을 할 수 있게 끔 해주는 기능이다. 어떤 영상을 보고 있을 때 내가 보는 영상에서 사고 싶은 혹은 먹고 싶은 것을 손쉽게 구매할 수 있게 하는 기능은 어떤 기능보다도 광고효과를 비롯해 구매 욕구를 불러일으킬 수 있다. 사용자(소비자) 입장에서도 손쉽게 구매를 할 수 있다는 점에서 효율적이고 편리한 기능이라고 할 수 있다.
     \end{enumerate}
 \end{enumerate}
@@ -1586,12 +1589,12 @@ RAM : 16GB
 
 [9] https://github.com/MarekKowalski/FaceSwap
 
-[10] https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation
+[10] $https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation$
 
 [11] https://github.com/deepfakes/faceswap
 
 [12] http://mangastorytelling.tistory.com/m/6984
 
-[13] https://github.com/shaoanlu/faceswap-GAN
+[13] $https://github.com/shaoanlu/faceswap-GAN$
 
 \end{document}
