@@ -219,9 +219,9 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 얼굴 교체 기술은 다음과 같은 용도로 사용될 수 있다.
 
 \begin{itemize}
-\item 자신이 좋아하는 사진이나 동영상에 본인의 얼굴을 입혀 자신만의 콘텐츠를 제작할 수 있다.
-\item 영화 또는 드라마에 자신이 좋아하는 연예인의 얼굴을 입혀 본인만의 영화와 드라마를 감상할 수 있다.
-\item 보안 유지, 얼굴 데이터 변형(face specific data augmentation method) 에도 사용될 수 있다.
+    \item 자신이 좋아하는 사진이나 동영상에 본인의 얼굴을 입혀 자신만의 콘텐츠를 제작할 수 있다.
+    \item 영화 또는 드라마에 자신이 좋아하는 연예인의 얼굴을 입혀 본인만의 영화와 드라마를 감상할 수 있다.
+    \item 보안 유지, 얼굴 데이터 변형(face specific data augmentation method) 에도 사용될 수 있다.
 \end{itemize}
 
 \subsection{ 얼굴교체(Face Swapping)기술의 요소 기술}
@@ -229,80 +229,79 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 얼굴 교체 기술은 세부적인 기술 요소에 상관없이 그림 1에 보인 대략적인 순서도의 절차를 따르게 된다. 최근 활발한 연구가 이루어지고 있는 Deep Learning기반의 얼굴 교체 기술 또한 마찬가지이다. 
 
 \begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{얼굴 교체 순서도}
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{얼굴 교체 순서도}
 \end{figure}
 
 다음은 대략적으로 얼굴 교체에 사용되어 지고 있는 요소기술을 설명한다.
 
                             
 \begin{enumerate}%[label={\pgana*.}]
-\item  얼굴 검출(Face Detection)
+    \item  얼굴 검출(Face Detection)
 
-얼굴 검출 요소 기술은 사진 또는 동영상 내에 존재하는 얼굴의 위치를 bounding box를 이용하여 검출하게 된다. 이를 이용하여 검출된 얼굴위치(영역)은 이후 사후처리에 도움을 주게 된다.
+    얼굴 검출 요소 기술은 사진 또는 동영상 내에 존재하는 얼굴의 위치를 bounding box를 이용하여 검출하게 된다. 이를 이용하여 검출된 얼굴위치(영역)은 이후 사후처리에 도움을 주게 된다.
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{얼굴영역 검출([1] 인용)}
-\end{figure}
-        
-\item 얼굴 특징점 추출 (Face Feature Extraction)
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{얼굴영역 검출([1] 인용)}
+    \end{figure}
+            
+    \item 얼굴 특징점 추출 (Face Feature Extraction)
 
-얼굴 특징점 추출 요소 기술은 얼굴영역의 주요 지점(눈, 코, 입, 눈썹, 턱선, 귀 등)을 추출하는 기술을 의미한다. 얼굴을 표현(face representation)하는데에 있어서 기준이 되는 점들이다.
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{얼굴 특징점 추출([2] 인용)}
-\end{figure}
+    얼굴 특징점 추출 요소 기술은 얼굴영역의 주요 지점(눈, 코, 입, 눈썹, 턱선, 귀 등)을 추출하는 기술을 의미한다. 얼굴을 표현(face representation)하는데에 있어서 기준이 되는 점들이다.
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{얼굴 특징점 추출([2] 인용)}
+    \end{figure}
 
-\item 얼굴 정렬 기술 (Face Alignment)
+    \item 얼굴 정렬 기술 (Face Alignment)
 
-얼굴 정렬 요소 기술은 이미지를 통해 얼굴 표식의 위치를 얻는 과정이다. 이는 향후 얼굴 인식(face recognition)과 같은 사후에 적용될 기술에 영향을 끼치게 된다.
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{얼굴 정렬 기술([3] 인용)}
-\end{figure}
+    얼굴 정렬 요소 기술은 이미지를 통해 얼굴 표식의 위치를 얻는 과정이다. 이는 향후 얼굴 인식(face recognition)과 같은 사후에 적용될 기술에 영향을 끼치게 된다.
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{얼굴 정렬 기술([3] 인용)}
+    \end{figure}
 
-\item 얼굴 영역 분할 기술(Face Segmentation)
+    \item 얼굴 영역 분할 기술(Face Segmentation)
 
-얼굴 영역 분할 요소 기술은 얼굴을 교체하기 위해 얼굴이 아닌 나머지 영역을 제외하는 기술이다.
+    얼굴 영역 분할 요소 기술은 얼굴을 교체하기 위해 얼굴이 아닌 나머지 영역을 제외하는 기술이다.
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{ 얼굴 정렬 기술([3] 인용)}
-\end{figure}
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{ 얼굴 정렬 기술([3] 인용)}
+    \end{figure}
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{얼굴 정렬 기술([3] 인용)}
-\end{figure}
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{얼굴 정렬 기술([3] 인용)}
+    \end{figure}
 
-그림5  얼굴 분할 기술(인용 [4])
+    그림5  얼굴 분할 기술(인용 [4])
 
-\item 얼굴 전이기술(Face Transfer)
+    \item 얼굴 전이기술(Face Transfer)
 
-얼굴 전이 요소기술은 하나의 얼굴을 본따서 다른 얼굴에 그대로 전이시키는 기술이다. 원본 얼굴의 특색을 살리면서 전이가 가능하지만, 약간의 부자연스러움을 느낄 수 있다.
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{얼굴 전이 기술(인용 [4])}
-\end{figure}
+    얼굴 전이 요소기술은 하나의 얼굴을 본따서 다른 얼굴에 그대로 전이시키는 기술이다. 원본 얼굴의 특색을 살리면서 전이가 가능하지만, 약간의 부자연스러움을 느낄 수 있다.
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{얼굴 전이 기술(인용 [4])}
+    \end{figure}
 
-\item  3차원 자세조정기술(3D Pose Adjustment)
+    \item  3차원 자세조정기술(3D Pose Adjustment)
 
-3차원 자세조정 요소기술은 3차원 모델을 매개체로 하여 얼굴을 정렬하게 된다. 2D에 비해 더욱 견고(robust)한 모델이며, 훨씬 자연스러운 결과를 얻을 수 있다. 
+    3차원 자세조정 요소기술은 3차원 모델을 매개체로 하여 얼굴을 정렬하게 된다. 2D에 비해 더욱 견고(robust)한 모델이며, 훨씬 자연스러운 결과를 얻을 수 있다. 
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{ 3차원 자세 조정([4] 인용)}
-\end{figure}
-
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{ 3차원 자세 조정([4] 인용)}
+    \end{figure}
 \end{enumerate}
 
 \section{얼굴교체 기술 국내외 연구동향}
@@ -313,77 +312,77 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
 
 \begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{ 시기 별 기술과 정확도(LFW) (인용 [6])    }
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{ 시기 별 기술과 정확도(LFW) (인용 [6])    }
 \end{figure}
 
 
 \begin{enumerate}%[label={\pgana*.}]
-\item 한양대학교 :
+    \item 한양대학교 :
 
-Deep Learning 모델인 SGNet을 사용하여 실시간으로 얼굴 및 랜드마크 검출을 위한 DCNN을 최적화하는 설계를 개발하였다. 
-상호보완이 가능한 얼굴 검출 DCNN 2가지를 모으고, Sliding window 방식이 아닌 Grid 방식을 이용하여 효율을 높였다. 
-또한, 큰 얼굴을 전문적으로 찾아내는 DCNN, 작은 얼굴을 전문적으로 찾아내는 DCNN, 마지막으로 각 얼굴의 랜드마크를 찾아내는 DCNN과
-같이 깊은 DCNN을 설계하는 대신 3단계 네트워크로 나누어서 설계하였다. 비교 대상으로, 
-얼굴 검출 알고리즘 중에서 효율적인 알고리즘이라고 알려져 있는 MTCNN과 비교했을 때, 66배의 속도 향상과 약 20\%의 검출률 향상률이 있었다.
+    Deep Learning 모델인 SGNet을 사용하여 실시간으로 얼굴 및 랜드마크 검출을 위한 DCNN을 최적화하는 설계를 개발하였다. 
+    상호보완이 가능한 얼굴 검출 DCNN 2가지를 모으고, Sliding window 방식이 아닌 Grid 방식을 이용하여 효율을 높였다. 
+    또한, 큰 얼굴을 전문적으로 찾아내는 DCNN, 작은 얼굴을 전문적으로 찾아내는 DCNN, 마지막으로 각 얼굴의 랜드마크를 찾아내는 DCNN과
+    같이 깊은 DCNN을 설계하는 대신 3단계 네트워크로 나누어서 설계하였다. 비교 대상으로, 
+    얼굴 검출 알고리즘 중에서 효율적인 알고리즘이라고 알려져 있는 MTCNN과 비교했을 때, 66배의 속도 향상과 약 20\%의 검출률 향상률이 있었다.
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{시기 별 기술과 정확도(LFW) (인용 [6])    }
-\end{figure}
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{시기 별 기술과 정확도(LFW) (인용 [6])    }
+    \end{figure}
 
-\item 서강대학교 : 
+    \item 서강대학교 : 
 
-얼굴 교체 연구에서 아시아인 교체에 대한 결과가 좋지 않은 연구가 서양인에 비해 상대적으로 많다.
-이에 관련하여 연구진들은 한국 연예인 얼굴 데이터셋을 모아 실험을 하였고, 
-FaceNet의 Fine-Tuning을 통해 연예인 1000명을 대상으로 얼굴 검출을 한 뒤, 
-91.3\%의 정답률을 보이는 결과를 얻었다.
+    얼굴 교체 연구에서 아시아인 교체에 대한 결과가 좋지 않은 연구가 서양인에 비해 상대적으로 많다.
+    이에 관련하여 연구진들은 한국 연예인 얼굴 데이터셋을 모아 실험을 하였고, 
+    FaceNet의 Fine-Tuning을 통해 연예인 1000명을 대상으로 얼굴 검출을 한 뒤, 
+    91.3\%의 정답률을 보이는 결과를 얻었다.
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{시기 별 기술과 정확도(LFW) (인용 [6])    }
-\end{figure}
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{시기 별 기술과 정확도(LFW) (인용 [6])    }
+    \end{figure}
 
-\item Joint Face Detection and Alignment Using Multitask Cascaded Convolutional Networks : 
+    \item Joint Face Detection and Alignment Using Multitask Cascaded Convolutional Networks : 
 
-제약되지 않은 환경(다양한 포즈, 그림자, 배경)에서의 얼굴 검출과 정렬은 매우 어려운 작업이다. 
-이들은 Computer Vision에서 가장 많이 사용되는 CNN을 활용하여 이를 극복하는 것을 시도하였다.
-Bounding box regression을 사용하여 얼굴의 특징을 파악하게 되는데, 이때 P-Net, R-Net, O-Net이 사용된다.
-‘MTCNN’이라고 불리우며 현재까지 가장 효율적인 얼굴 검출 알고리즘이라고 알려져 있으며, 여러 연구에서 많이 사용하고 있다. 
+    제약되지 않은 환경(다양한 포즈, 그림자, 배경)에서의 얼굴 검출과 정렬은 매우 어려운 작업이다. 
+    이들은 Computer Vision에서 가장 많이 사용되는 CNN을 활용하여 이를 극복하는 것을 시도하였다.
+    Bounding box regression을 사용하여 얼굴의 특징을 파악하게 되는데, 이때 P-Net, R-Net, O-Net이 사용된다.
+    ‘MTCNN’이라고 불리우며 현재까지 가장 효율적인 얼굴 검출 알고리즘이라고 알려져 있으며, 여러 연구에서 많이 사용하고 있다. 
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{ 시기 별 기술과 정확도(LFW) (인용 [6])    }
-\end{figure}
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{ 시기 별 기술과 정확도(LFW) (인용 [6])    }
+    \end{figure}
 
-\item HyperFace: A Deep Multi-Task Learning Framework for Face Detection, Landmark Localization, Pose Estimation, and Gender Recognition : 
+    \item HyperFace: A Deep Multi-Task Learning Framework for Face Detection, Landmark Localization, Pose Estimation, and Gender Recognition : 
 
-이 연구는 CNN을 사용하여 얼굴 검출, 얼굴 특징점의 지역화, 행위 추정, 성별 인지를 동시에 하는 알고리즘을 개발하였다. 
-Deep Learning의 성능을 최적화 시키기 위한 가장 효율적인 네트워크인 ResNet-101을 기반으로 하였고, R-CNN의 기법인 region proposals를 사용하여 속도를 높였다. 
-정확도, 속도 측면에서 (다) 방법에 비해 2배가량 향상된 결과를 보여주었다. 
+    이 연구는 CNN을 사용하여 얼굴 검출, 얼굴 특징점의 지역화, 행위 추정, 성별 인지를 동시에 하는 알고리즘을 개발하였다. 
+    Deep Learning의 성능을 최적화 시키기 위한 가장 효율적인 네트워크인 ResNet-101을 기반으로 하였고, R-CNN의 기법인 region proposals를 사용하여 속도를 높였다. 
+    정확도, 속도 측면에서 (다) 방법에 비해 2배가량 향상된 결과를 보여주었다. 
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{시기 별 기술과 정확도(LFW) (인용 [6])    }
-\end{figure}
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{시기 별 기술과 정확도(LFW) (인용 [6])    }
+    \end{figure}
 
-\item Faceness-Net: Face Detection through Deep Facial Part Responses : 
+    \item Faceness-Net: Face Detection through Deep Facial Part Responses : 
 
-이 연구는 얼굴의 특정 부위 별로 학습된 CNN을 활용하여 정렬되지 않은 얼굴 사진에서의 얼굴 검출을 성공적으로 해낸 연구이다. 
-관련 그림과 같이 총 2가지 stage로 나뉘어져 있다. 첫번째 단계는 각각 다른 얼굴 부위(머리, 눈, 코, 입, 턱)에서의 반응 맵을 생성가능한 CNN으로 이루어져있다. 
-각각의 반응 맵은 특정 부위의 영역에 맞게 활성화되어 있음을 볼 수 있다. 
-두번째 단계는 MTCNN을 통해 얼굴 분류, Bounding box regression을 최적화하여 최종적으로 얼굴의 위치를 검출합니다. 
+    이 연구는 얼굴의 특정 부위 별로 학습된 CNN을 활용하여 정렬되지 않은 얼굴 사진에서의 얼굴 검출을 성공적으로 해낸 연구이다. 
+    관련 그림과 같이 총 2가지 stage로 나뉘어져 있다. 첫번째 단계는 각각 다른 얼굴 부위(머리, 눈, 코, 입, 턱)에서의 반응 맵을 생성가능한 CNN으로 이루어져있다. 
+    각각의 반응 맵은 특정 부위의 영역에 맞게 활성화되어 있음을 볼 수 있다. 
+    두번째 단계는 MTCNN을 통해 얼굴 분류, Bounding box regression을 최적화하여 최종적으로 얼굴의 위치를 검출합니다. 
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{시기 별 기술과 정확도(LFW) (인용 [6])    }
-\end{figure}
+    \begin{figure}[h!]
+        \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{시기 별 기술과 정확도(LFW) (인용 [6])    }
+    \end{figure}
 
 \end{enumerate}
 
@@ -417,31 +416,29 @@ Deep Learning의 성능을 최적화 시키기 위한 가장 효율적인 네트
 
 앞서 설명한 Filter-based 방식에서의 단점은 제약이 있는 상황(constraint circumstance)에서만 좋은 결과를 얻는다는 것이다. 예를 들어, illuminate, pose 등의 복합적인(제약이 없는 – unconstraint circumstance) 상황이 추가되면 얼굴 특징을 잘 추출하지 못한다. 이러한 점을 해결하기 위해 연구자들은 주로 Deep Learning 알고리즘(대표적으로 CNN)을 사용하고 있다. 또한 얼굴 검출(인식) 및 특징점 추출 관련 기술에서는 이미 Deep Learning에 기반한 기술이 이전 기술(ex: Filter-based)에 비해 99\%의 정확도를 보이는 등 상당히 좋은 결과를 보이고 있어 이제는 관련 기술 연구에 있어서는 Deep Learning을 필수적으로 사용하게 되었다.
 \begin{center}
-
-\begin{tabu} to \linewidth{|X[1,c,m]|>{\compress}X[3.5,c,m]|}%
-    \tabucline-%
-    %%%%% 1st row
-    Framework & Details \\ \tabucline-
-    %%%%% 2nd row
-    %%%%% 2-1 
-   CNN 
-    &%
-    %%%%% 2-2
-    \begin{itemize}
-        \item output layer directly connected with the penultimate and antepenultimate layer 
-        \item bilinear CNN 
-        \item 5-layer CNN + multitasking  
-        \item frontal alignment by 3D face +  7 layer CNN 
-        \item CNN with feature sharing  
-        \item joint feature projection learning  
-        \item supervisory signals involved  
-        \item two lightened CNN models with MFM, inception layer and stacked convolution 
-        \item one CNN for canonical view recovery and another CNN for feature extraction  
-        \item CNNs combined with stacked auto-encoder 
-    \end{itemize}
-    \\ \tabucline-
-    \end{tabu}
-
+    \begin{tabu} to \linewidth{|X[1,c,m]|>{\compress}X[3.5,c,m]|}%
+        \tabucline-%
+        %%%%% 1st row
+        Framework & Details \\ \tabucline-
+        %%%%% 2nd row
+        %%%%% 2-1 
+    CNN 
+        &%
+        %%%%% 2-2
+        \begin{itemize}
+            \item output layer directly connected with the penultimate and antepenultimate layer 
+            \item bilinear CNN 
+            \item 5-layer CNN + multitasking  
+            \item frontal alignment by 3D face +  7 layer CNN 
+            \item CNN with feature sharing  
+            \item joint feature projection learning  
+            \item supervisory signals involved  
+            \item two lightened CNN models with MFM, inception layer and stacked convolution 
+            \item one CNN for canonical view recovery and another CNN for feature extraction  
+            \item CNNs combined with stacked auto-encoder 
+        \end{itemize}
+        \\ \tabucline-
+        \end{tabu}
 \end{center}
 
 \section{얼굴 교체 및 인식 기술 관련 최근 국내외 연구동향}
@@ -452,15 +449,15 @@ Deep Learning의 성능을 최적화 시키기 위한 가장 효율적인 네트
 위 사진은 연도별로 좋은 성능을 보인 논문을 정리해 놓은 것이다. 2015년 이후로 모델에 관련된 연구보다는 Loss 관련 연구로 분위기가 넘어간 것이 보이는데, 이를 citation에 근거하여 설명할 수 있다. 각 연도별 state-of-art 논문의 citation수를 $>1500$, $> 500$. $> 100$ 단위로 나누어서 구분해 보았다. 
 
 \begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{연도 별 연구 동향 (인용 [6])}
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{연도 별 연구 동향 (인용 [6])}
 \end{figure}
 
 \begin{itemize}
-\item   citation $> 1500$ : Deepface, FaceNet, VGGFace
-\item   citation $> 500$  : DeepID2, DeepID, Center loss
-\item   citation $> 100$  : DeepID2+, DeepID3, L-softmax, A-softmax
+    \item   citation $> 1500$ : Deepface, FaceNet, VGGFace
+    \item   citation $> 500$  : DeepID2, DeepID, Center loss
+    \item   citation $> 100$  : DeepID2+, DeepID3, L-softmax, A-softmax
 \end{itemize}
 
 주로 1500이 넘는 인용수를 가지는 논문은 15~16년도에 집중되어 있는 것을 볼 수 있는데, 이 현상이 최근 얼굴 관련 연구 동향이 바뀌었다는 것을 설명하여 준다. 실제로 최근 연구되어지고 있는 GAN에서 대부분 얼굴 검출 또는 특징점 추출 과정에서 VGGFace나 FaceNet을 주로 사용하는 것을 볼 수 있다. 
@@ -468,59 +465,58 @@ Deep Learning의 성능을 최적화 시키기 위한 가장 효율적인 네트
 다음은 그 외의 내용을 설명한다.
 \begin{enumerate}%[label={\pgana*.}]
 
-\item NAVER : 네이버는 최근 이미지, 음성인식, 자연어 처리 등에서 우수한 성적을 거두고 있으며, 특히 자연어 처리 분야에서 세계 1위의 자리를 차지할 만큼 AI에 대한 투자가 활발하다. 이에 얼굴 관련해서는 웹툰을 이용하여 소비자들에게 실험적으로 선보인 만화가 있다. 네이버 웹툰 ‘마주쳤다’ 는 독자의 사진을 활용해 웹툰 이미지로 생성했으며 독자가 웹툰 속 주인공이 되는 경험을 제공했다. 또한, 네이버 ‘D2 스타트업 팩토리’에 입주한 스타트업 알레시오는 GAN을 응용해 태아의 입체 초음파 사진을 생후 아기의 얼굴로 변환해주는 서비스를 준비 중이다.
+    \item NAVER : 네이버는 최근 이미지, 음성인식, 자연어 처리 등에서 우수한 성적을 거두고 있으며, 특히 자연어 처리 분야에서 세계 1위의 자리를 차지할 만큼 AI에 대한 투자가 활발하다. 이에 얼굴 관련해서는 웹툰을 이용하여 소비자들에게 실험적으로 선보인 만화가 있다. 네이버 웹툰 ‘마주쳤다’ 는 독자의 사진을 활용해 웹툰 이미지로 생성했으며 독자가 웹툰 속 주인공이 되는 경험을 제공했다. 또한, 네이버 ‘D2 스타트업 팩토리’에 입주한 스타트업 알레시오는 GAN을 응용해 태아의 입체 초음파 사진을 생후 아기의 얼굴로 변환해주는 서비스를 준비 중이다.
 
-\begin{figure}[h!]
-    \centering
-  %  \includegraphics[scale=0.5]{170920.png}}
-    \caption{ GAN을 활용한 네이버 웹툰 ‘마주쳤다’ <출처: 네이버랩스>}
-\end{figure}
-
-
-\item 미국 워싱턴 대학교 : 워싱턴 대학교의 연구진은 버락 오바마 전 미국 대통령의 가짜 영상을 만들어냈다. 오바마 전 대통령의 연설 영상에서 음성을 따서 이 음성에 맞게 입모양을 내도록 학습시켜 합성해 실제로는 존재하지 않는 영상을 만들어냈다. 
-
-\begin{figure}[h!]
-    \centering
-  %  \includegraphics[scale=0.5]{170920.png}}
-    \caption{  버락 오바마 전 미국 대통령의 가짜 영상 <출처: 워싱턴대학교>}
-\end{figure}
+    \begin{figure}[h!]
+        \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{ GAN을 활용한 네이버 웹툰 ‘마주쳤다’ <출처: 네이버랩스>}
+    \end{figure}
 
 
-\item Unsupervised Image-to-Image Translation with Generative Adversarial Networks : 이 연구는 “image-to-image translation” 문제를 GAN을 활용하여 해결한 연구이다. 총 2가지에 대해 실험을 하였다. 1) Gender transformation 2) Face swapping 하지만 이 연구는 obama-Hillary 데이터셋에 한정된 실험을 하였으며, edge detection에 있어서 부족한 결과를 내었다.
+    \item 미국 워싱턴 대학교 : 워싱턴 대학교의 연구진은 버락 오바마 전 미국 대통령의 가짜 영상을 만들어냈다. 오바마 전 대통령의 연설 영상에서 음성을 따서 이 음성에 맞게 입모양을 내도록 학습시켜 합성해 실제로는 존재하지 않는 영상을 만들어냈다. 
 
-\begin{figure}[h!]
-    \centering
-  %  \includegraphics[scale=0.5]{170920.png}}
-    \caption{ GAN Architecture(인용 [5])}
-\end{figure}
-
-\end{enumerate}
-
-\subsection{얼굴교체 기술의 문제점}
-\begin{enumerate}
-\item technical model : 
-
-얼굴 검출 및 특징점 관련 기술에 대해서는 커다란 이슈가 없는 상황이면서 이미 사람의 수준을 뛰어넘어 더욱 향상되어질 상황만 남은 상태이다. 최근 중국이 1000만개의 데이터셋을 이용하여 세계 1위를 차지한 것이 화제가 되었다. 반면 얼굴 관련 알고리즘에 우수한 성적을 꾸준히 보여왔던 미국은 10위 안에 딱 1개의 팀만이 들어가 있었으며, 이에 연구자들은 기술적인 모델보다는 데이터셋에 대해 훨씬 많은 관심을 보였다. 따라서 향후 연구에서는 기술적인 모델은 가장 결과가 자연스러운 GAN을 활용한 연구를 벤치마킹(+응용)하여 가져다 쓰되, 데이터셋이나 하드웨어에 대한 깊은 고민이 있어야 할 것이다.
-
-\item data dependency : 
-
-앞서 말했듯이 연구자들은 중국이 세계 1위를 가볍게 탈환한 이유를 거대한 데이터의 존재로 예측하고 있다. 실제로 본 팀에서 GAN을 활용하여 한 실험에서도 데이터에 상당히 의존적인 것을 확인 할 수 있었다. 가령 Masking 방식이나 그 외의 방식 또한 그렇지만 GAN은 제일 영향을 많이 받는 모델이다. 예를 들어, A -> B로 얼굴을 변형하는 상황에서 A의 입주변에 마이크가 있다면 B에서의 얼굴 변형을 실행할때도 입주변에 마이크가 같이 생성되게 된다. 또한, 만족스런 결과를 얻기 위해선 상당수의 질이 좋은 데이터와 매우 긴 훈련 시간을 가져야 한다. 여기서 질이 좋은 데이터란 기본적으로 얼굴 근처에 장애물이 없는 이미지와 정면을 바라보고 있는 얼굴이 많을 수록 좋다는 뜻이다. 따라서 향후 연구에서는 데이터 수집 또는 수집이 불가할 경우 data augmentation을 통한 데이터 생성에 대한 연구가 함께 진행되어야 할 것이다.
-
-\begin{figure}[h!]
-    \centering
-  %  \includegraphics[scale=0.5]{170920.png}}
-\caption{Face 연구용 데이터의 변화 (인용 [6])}
-\end{figure}
+    \begin{figure}[h!]
+        \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{  버락 오바마 전 미국 대통령의 가짜 영상 <출처: 워싱턴대학교>}
+    \end{figure}
 
 
-\item hardware dependency : 
+    \item Unsupervised Image-to-Image Translation with Generative Adversarial Networks : 이 연구는 “image-to-image translation” 문제를 GAN을 활용하여 해결한 연구이다. 총 2가지에 대해 실험을 하였다. 1) Gender transformation 2) Face swapping 하지만 이 연구는 obama-Hillary 데이터셋에 한정된 실험을 하였으며, edge detection에 있어서 부족한 결과를 내었다.
 
-얼굴 관련 신경망 모델은 다른 문제 해결에 필요한 하드웨어 충족 조건보다 큰 조건을 요구한다. 왜냐하면 얼굴에서의 많은 굴곡에 대한 처리와 구체적인 특징 파악에 있어 많은 파라미터를 요구하기 때문이다. 또한, 세밀한 특징들을 잡기 위해선 신경망이 깊어질 필요가 있어 우수한 하드웨어 조건을 요구하게 될 수 밖에 없다. 물론 모델 깊이를 줄인다면 연구자의 하드웨어에 맞게 훈련을 시킬 수 있겠지만 그만큼 결과가 안좋아질 가능성이 높다. 따라서 향후 제품으로 사용될 경우엔 충분히 소비자가 납득할 만한 결과를 낼 수 있는 모델을 가동할 수 있는 하드웨어를 장착해야 할 것이다. 
+    \begin{figure}[h!]
+        \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+        \caption{ GAN Architecture(인용 [5])}
+    \end{figure}
 
-\item 연구의 시사점 : 
+    \end{enumerate}
 
-현재 FR(Face Recognition)분야 관련해서는 학교 수준의 연구는 더 이상 진행하지 않아도 된다고 많은 연구자들이 평가하고 있다. 이미 공개되어진 VGGFace모델과 dataset을 사용하는 것이 다른 것보다 더 효율적일 것이다. 향후 ETRI에서는 COX에서의 기능 탑재를 위해 모델 관련 연구에 대한것 보다는 Dataset, Data-Preprocessing, Face DB 구축하는 방향의 연구를 진행해야 할 것이다. 또한, 최근 FR 연구 Issue중 하나인 모바일에서 처리가 가능한지에 대해서도 연구를 진행하여야 한다.
-    
+    \subsection{얼굴교체 기술의 문제점}
+    \begin{enumerate}
+    \item technical model : 
+
+    얼굴 검출 및 특징점 관련 기술에 대해서는 커다란 이슈가 없는 상황이면서 이미 사람의 수준을 뛰어넘어 더욱 향상되어질 상황만 남은 상태이다. 최근 중국이 1000만개의 데이터셋을 이용하여 세계 1위를 차지한 것이 화제가 되었다. 반면 얼굴 관련 알고리즘에 우수한 성적을 꾸준히 보여왔던 미국은 10위 안에 딱 1개의 팀만이 들어가 있었으며, 이에 연구자들은 기술적인 모델보다는 데이터셋에 대해 훨씬 많은 관심을 보였다. 따라서 향후 연구에서는 기술적인 모델은 가장 결과가 자연스러운 GAN을 활용한 연구를 벤치마킹(+응용)하여 가져다 쓰되, 데이터셋이나 하드웨어에 대한 깊은 고민이 있어야 할 것이다.
+
+    \item data dependency : 
+
+    앞서 말했듯이 연구자들은 중국이 세계 1위를 가볍게 탈환한 이유를 거대한 데이터의 존재로 예측하고 있다. 실제로 본 팀에서 GAN을 활용하여 한 실험에서도 데이터에 상당히 의존적인 것을 확인 할 수 있었다. 가령 Masking 방식이나 그 외의 방식 또한 그렇지만 GAN은 제일 영향을 많이 받는 모델이다. 예를 들어, A -> B로 얼굴을 변형하는 상황에서 A의 입주변에 마이크가 있다면 B에서의 얼굴 변형을 실행할때도 입주변에 마이크가 같이 생성되게 된다. 또한, 만족스런 결과를 얻기 위해선 상당수의 질이 좋은 데이터와 매우 긴 훈련 시간을 가져야 한다. 여기서 질이 좋은 데이터란 기본적으로 얼굴 근처에 장애물이 없는 이미지와 정면을 바라보고 있는 얼굴이 많을 수록 좋다는 뜻이다. 따라서 향후 연구에서는 데이터 수집 또는 수집이 불가할 경우 data augmentation을 통한 데이터 생성에 대한 연구가 함께 진행되어야 할 것이다.
+
+    \begin{figure}[h!]
+        \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{Face 연구용 데이터의 변화 (인용 [6])}
+    \end{figure}
+
+    \item hardware dependency : 
+
+    얼굴 관련 신경망 모델은 다른 문제 해결에 필요한 하드웨어 충족 조건보다 큰 조건을 요구한다. 왜냐하면 얼굴에서의 많은 굴곡에 대한 처리와 구체적인 특징 파악에 있어 많은 파라미터를 요구하기 때문이다. 또한, 세밀한 특징들을 잡기 위해선 신경망이 깊어질 필요가 있어 우수한 하드웨어 조건을 요구하게 될 수 밖에 없다. 물론 모델 깊이를 줄인다면 연구자의 하드웨어에 맞게 훈련을 시킬 수 있겠지만 그만큼 결과가 안좋아질 가능성이 높다. 따라서 향후 제품으로 사용될 경우엔 충분히 소비자가 납득할 만한 결과를 낼 수 있는 모델을 가동할 수 있는 하드웨어를 장착해야 할 것이다. 
+
+    \item 연구의 시사점 : 
+
+    현재 FR(Face Recognition)분야 관련해서는 학교 수준의 연구는 더 이상 진행하지 않아도 된다고 많은 연구자들이 평가하고 있다. 이미 공개되어진 VGGFace모델과 dataset을 사용하는 것이 다른 것보다 더 효율적일 것이다. 향후 ETRI에서는 COX에서의 기능 탑재를 위해 모델 관련 연구에 대한것 보다는 Dataset, Data-Preprocessing, Face DB 구축하는 방향의 연구를 진행해야 할 것이다. 또한, 최근 FR 연구 Issue중 하나인 모바일에서 처리가 가능한지에 대해서도 연구를 진행하여야 한다.
+        
 \end{enumerate}
 
 \chapter{ 2D-Faceswap 모델의 기술 분석 및 구현 }
@@ -576,11 +572,11 @@ The different versions of Candide (click for larger images).}
 알고리즘 과정을 살펴보면 먼저 입력 이미지를 가져와서 얼굴 영역과 그 경계표를 찾아낸다. 그 후 3D 모델을 랜드 마크에 맞춰 이미지에 투영된 모델의 정해진 점이 텍스처의 좌표가 된다. 이 것들이 완료되면 모든 것이 초기화되고 카메라가 이미지 캡처를 시작한다.(동영상의 경우 프레임을 뽑아낸다.) 캡처된 각 이미지에 대해서 다음 단계가 수행된다.
 
 \begin{enumerate}
-\item 얼굴 영역이 감지되고 얼굴의 표식이 배치된다.
-\item 3D 모델은 위치가 지정된 랜드마크가 fitting 된다.
-\item 3D 모델은 초기화하는 동안 얻은 텍스처와 함께 렌더링된다.
-\item 렌더링 된 모델의 이미지는 간단한 색상 교정을 사용하여 카메라에서 얻은 이미지(동영상의 경우 뽑아낸 프레임) 와 혼합된다.
-\item 최종 이미지가 사용자에게 표시된다.
+    \item 얼굴 영역이 감지되고 얼굴의 표식이 배치된다.
+    \item 3D 모델은 위치가 지정된 랜드마크가 fitting 된다.
+    \item 3D 모델은 초기화하는 동안 얻은 텍스처와 함께 렌더링된다.
+    \item 렌더링 된 모델의 이미지는 간단한 색상 교정을 사용하여 카메라에서 얻은 이미지(동영상의 경우 뽑아낸 프레임) 와 혼합된다.
+    \item 최종 이미지가 사용자에게 표시된다.
 \end{enumerate}
 
 이 전체 프로세스에서 가장 중요한 요소는 3D 모델의 피팅이다. 
@@ -588,15 +584,15 @@ The different versions of Candide (click for larger images).}
 3D 모델 자체의 구성은 다음과 같다.
 
 \begin{itemize}
-\item 중립면 모델의 3D 모양.
-\item 입 열기, 눈썹 올리기 등을 만들기 위해 중립면에 추가 할 수 있는 여러가지 블렌딩 쉐이프, 얼굴의 삼각형으로 형성된 얼굴 모양의 인덱스 삼중 세트.
-\item 랜드마크 로컬 라이저에 의해 발견된 표식과 3D 얼굴 형태의 정점 사이에서 일치를 설정하는 두 세트의 인덱스.
-\item 모델은 다음의 방정식을 통해서 이미지에 투영된다.
-\[ s = aP \left( S_{0} + \sum_{i=1}^{n} w_{i}\cdot S_{i}  \right)   \]
+    \item 중립면 모델의 3D 모양.
+    \item 입 열기, 눈썹 올리기 등을 만들기 위해 중립면에 추가 할 수 있는 여러가지 블렌딩 쉐이프, 얼굴의 삼각형으로 형성된 얼굴 모양의 인덱스 삼중 세트.
+    \item 랜드마크 로컬 라이저에 의해 발견된 표식과 3D 얼굴 형태의 정점 사이에서 일치를 설정하는 두 세트의 인덱스.
+    \item 모델은 다음의 방정식을 통해서 이미지에 투영된다.
+    \[ s = aP \left( S_{0} + \sum_{i=1}^{n} w_{i}\cdot S_{i}  \right)   \]
 
-여기서 $s$는 투영된 모양, $a$는 배율의 매개변수, $P$는 3D 모양을 회전시키는 회전 행렬의 처음 두 행, $S_0$는 중립면의 모양, $w_i$은 블렌드 모양의 가중치, $S_i$은 블렌드 쉐이프, $t$는 2D 변환 벡터, $n$은 블렌드 쉐이프의 수이다.
-모델 피팅은 투영된 모양과 랜드마크 간의 차이를 최소화하여 진행된다. 모양과 랜드마크의 차이의 최소화는 Gauss Newton방법을 이용하여 블렌드 형태의 가중치, 스케일링, 회전 및 평행 이동 등 다양한 변환을 수행한다.(인용 [9])
-\end{itemize}
+    여기서 $s$는 투영된 모양, $a$는 배율의 매개변수, $P$는 3D 모양을 회전시키는 회전 행렬의 처음 두 행, $S_0$는 중립면의 모양, $w_i$은 블렌드 모양의 가중치, $S_i$은 블렌드 쉐이프, $t$는 2D 변환 벡터, $n$은 블렌드 쉐이프의 수이다.
+    모델 피팅은 투영된 모양과 랜드마크 간의 차이를 최소화하여 진행된다. 모양과 랜드마크의 차이의 최소화는 Gauss Newton방법을 이용하여 블렌드 형태의 가중치, 스케일링, 회전 및 평행 이동 등 다양한 변환을 수행한다.(인용 [9])
+    \end{itemize}
 
 \section{2D-Faceswap 모델의 테스트 환경 및 결과}
 
@@ -1185,11 +1181,12 @@ RAM : 16GB
 \subsection{실행과정}
 
 Faceswap을 위해서 사용한 4가지 알고리즘 중 deepfake 알고리즘을 사용하여 얼굴을 바꿀 데이터를 직접 학습시켜 사용자에게 얼굴을 합성한 결과물을 자연스럽고 높은 퀄리티로 사용자들에게 보여준다.
+
 \begin{enumerate}
-\item  사용자는 먼저 정면 동영상 A와 얼굴 A를 B로 바꿔주는 트레이닝 된 모델을 준비한다.
-\item 웹 상에 얼굴 정면이 들어가 있는 동영상 A와 모델을 업로드한후 결과가 저장될 폴더를 정한다..
-\item 서버에서 deepfake 알고리즘을 동영상에 적용시킨다.  (deepfake 알고리즘의 적용과정은 제4장에 있다.)
-\item deepfake 알고리즘이 적용된 동영상을 웹 상에 표시하고 결과물을 폴더에 저장시킨다..
+    \item  사용자는 먼저 정면 동영상 A와 얼굴 A를 B로 바꿔주는 트레이닝 된 모델을 준비한다.
+    \item 웹 상에 얼굴 정면이 들어가 있는 동영상 A와 모델을 업로드한후 결과가 저장될 폴더를 정한다..
+    \item 서버에서 deepfake 알고리즘을 동영상에 적용시킨다.  (deepfake 알고리즘의 적용과정은 제4장에 있다.)
+    \item deepfake 알고리즘이 적용된 동영상을 웹 상에 표시하고 결과물을 폴더에 저장시킨다..
 \end{enumerate}
 
 세부 작동방식 :
@@ -1240,32 +1237,32 @@ Faceswap을 위해서 사용한 4가지 알고리즘 중 deepfake 알고리즘�
 \subsection{실행 과정}
 \begin{enumerate}%[label={\pgana*.}]
 
-\item 실행코드 변경
+    \item 실행코드 변경
 
-앞서 5절에서 사용한 GAN을 이용한 얼굴 변형 모델(인용 [13])은 웹에서 실행 할 수 없는 주피터 노트북으로 작성된 파이썬 코드이다. 따라서 핵심 모듈을 일괄작업 방식으로 코드 실행 시 파일의 경로를 받아 작업을 수행하도록 코드를 새로 작성하였다.
+    앞서 5절에서 사용한 GAN을 이용한 얼굴 변형 모델(인용 [13])은 웹에서 실행 할 수 없는 주피터 노트북으로 작성된 파이썬 코드이다. 따라서 핵심 모듈을 일괄작업 방식으로 코드 실행 시 파일의 경로를 받아 작업을 수행하도록 코드를 새로 작성하였다.
 
-\item 핵심 모듈 구성
+    \item 핵심 모듈 구성
 
-앞서 5절에서 설명한 3가지 과정과 비디오를 변환하는 모듈을 작성하였다.
+    앞서 5절에서 설명한 3가지 과정과 비디오를 변환하는 모듈을 작성하였다.
 
--MTCNN face detection
+    -MTCNN face detection
 
--prep binary masks
+    -prep binary masks
 
--Train module
+    -Train module
 
--Video conversion
+    -Video conversion
 
-\item 모듈 동작 과정
-\begin{enumerate}
-\item  사용자는 얼굴을 바꾸고 싶은 동영상을 업로드한다. 이하 A동영상
-\item 합성하고자 하는 인물의 동영상을 업로드한다. 이하 B동영상
-\item MTCNN face detection 모듈을 실행하여 A동영상과 B동영상에서 얼굴을 추출한다.
-\item prep binary masks 모듈을 실행하여 얼굴을 정렬한다.
-\item Train module을 실행하여 학습된 모델을 생성한다.
-\item Video conversion 모듈을 실행하면 학습된 모델을 이용하여 A동영상에 B를 합성한다.
-\item 합성한 결과를 웹 상에 표시한다.
-\end{enumerate}
+    \item 모듈 동작 과정
+    \begin{enumerate}
+        \item  사용자는 얼굴을 바꾸고 싶은 동영상을 업로드한다. 이하 A동영상
+        \item 합성하고자 하는 인물의 동영상을 업로드한다. 이하 B동영상
+        \item MTCNN face detection 모듈을 실행하여 A동영상과 B동영상에서 얼굴을 추출한다.
+        \item prep binary masks 모듈을 실행하여 얼굴을 정렬한다.
+        \item Train module을 실행하여 학습된 모델을 생성한다.
+        \item Video conversion 모듈을 실행하면 학습된 모델을 이용하여 A동영상에 B를 합성한다.
+        \item 합성한 결과를 웹 상에 표시한다.
+    \end{enumerate}
 
 \end{enumerate}
 3. 실행 결과
@@ -1313,116 +1310,116 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
 \begin{enumerate}
 
-\item  Push 
+    \item  Push 
 
-영상제작자가 사용자에게 메시지를 보내 제작자가 원하는 메시지를 사용자에게 보내는 기능
+    영상제작자가 사용자에게 메시지를 보내 제작자가 원하는 메시지를 사용자에게 보내는 기능
 
-PUSH 동작 pic
+    PUSH 동작 pic
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{android 화면 - push}
-\end{figure}
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 - push}
-\end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{android 화면 - push}
+    \end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 - push}
+    \end{figure}
 
-\item  Push Link 
+    \item  Push Link 
 
-영상제작자가 사용자에게 링크를 보내 사용자에게 링크접속을 유도하는 기능
+    영상제작자가 사용자에게 링크를 보내 사용자에게 링크접속을 유도하는 기능
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{android 화면 – pushlink}
-\end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{android 화면 – pushlink}
+    \end{figure}
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{android 화면 – pushlink 2}
-\end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{android 화면 – pushlink 2}
+    \end{figure}
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 – pushlink}
-\end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 – pushlink}
+    \end{figure}
 
-\item  Morse
+    \item  Morse
 
-영상제작자가 morse 부호를 설정하여 사용자의 기기에서 소리가 나게 하는 기능
-Morse 동작 pic
+    영상제작자가 morse 부호를 설정하여 사용자의 기기에서 소리가 나게 하는 기능
+    Morse 동작 pic
 
-\item  Call 
+    \item  Call 
 
-사용자기기로 영상제작자가 원하는 이름과 전화번호를 설정하여 전화모드가 구현되는 기능
+    사용자기기로 영상제작자가 원하는 이름과 전화번호를 설정하여 전화모드가 구현되는 기능
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{Web 화면 – Call}
-\end{figure}
-
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{android 화면 – Call}
-\end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{Web 화면 – Call}
+    \end{figure}
 
 
-\item  Image 
-
-사용자기기로 영상제작자가 원하는 이미지를 보내주는 기능
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{android 화면 – Image}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 – Image}
-\end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{android 화면 – Call}
+    \end{figure}
 
 
+    \item  Image 
 
-\item Motion 
+    사용자기기로 영상제작자가 원하는 이미지를 보내주는 기능
 
-영상제작자가 사용자에게 모바일 기기를 움직이게 하여 영상에 참여하도록 유도하는 기능
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 – Motion}
-\end{figure}
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 – Motion}
-\end{figure} 
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{android 화면 – Image}
+    \end{figure}
 
-\item Product
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 – Image}
+    \end{figure}
 
-사용자가 영상시청중 제품을 구매하게 유도하는 기능 
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 – product}
-\end{figure} 
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 – product}
-\end{figure} 
-    
+    \item Motion 
+
+    영상제작자가 사용자에게 모바일 기기를 움직이게 하여 영상에 참여하도록 유도하는 기능
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 – Motion}
+    \end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 – Motion}
+    \end{figure} 
+
+    \item Product
+
+    사용자가 영상시청중 제품을 구매하게 유도하는 기능 
+
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 – product}
+    \end{figure} 
+
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 – product}
+    \end{figure} 
+        
 
 
 \end{enumerate}
@@ -1430,34 +1427,33 @@ Morse 동작 pic
 \subsection{범위 지정}
 
 \begin{enumerate}
-\item Drawing X 안됨
+    \item Drawing X 안됨
 
-기능설명
-동작 pic
-
-
-\item Linkbox
-기능설명 모바일기기에서 안됨
-
-\item Vote
-
-사용자로 하여금 선택권을 주어 투표에 의해 영상이 선택되게 하는 기능.
-
-동작 pic
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 – Vote}
-\end{figure} 
+    기능설명
+    동작 pic
 
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 – Vote}
-\end{figure} 
+    \item Linkbox
+    기능설명 모바일기기에서 안됨
 
+    \item Vote
+
+    사용자로 하여금 선택권을 주어 투표에 의해 영상이 선택되게 하는 기능.
+
+    동작 pic
+
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 – Vote}
+    \end{figure} 
+
+
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 – Vote}
+    \end{figure} 
 
 \end{enumerate}
 
@@ -1479,115 +1475,115 @@ RAM : 16GB
 
 \begin{enumerate}
 
-\item 구성도
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{web 화면 – Vote}
-\end{figure} 
-
-\item 스토리 구성
-
-\begin{enumerate}%[label={\pgana*.}]
-
-    \item 주제 : 배고픈 식사시간에 어떤 음식을 먹을 것인지에 대한 주제로 이야기가 전개된다.  
-    \item 등장인물 : 여자주인공, 남자주인공1, 남자주인공2, 그 외 다수
-    \item 원 영상 출처 : tvN 드라마 ‘식샤를 합시다1,2’ 
-
-    \item 줄거리 : 여자 주인공이 운동을 하다가 휴대폰을 보게 되고 “배고프다~밥먹으러가자!“ 라는 메시지를 받으면서 이야기가 시작된다. 메시지를 받은 사용자의 모바일기기에 3가지 메뉴 중 먹고 싶은 메뉴를 고를 수 있는 선택권이 주어지게 되고 주인공은 치킨, 탕수육, 휴게소 음식(알 감자) 중 원하는 음식을 고르게 된다. 첫 번째로 치킨을 고르게 될 경우 치킨을 먹게 된다. 여자 주인공과 남자주인공1이 치킨을 나눠먹는 사이, 다른 한명의 남자주인공이 뒤늦게 치킨 무를 받아오며 늦게 합류해 함께 치킨을 먹는 모습이 보여 진다. 
-
-두 번째로는 탕수육이다. 여자주인공과 남자주인공이 사람들과 탕수육을 먹으러 중국집에 가게 된다. 주문한 음식들이 나와져있고 그중 탕수육을 먹게 되는데, 남자주인공이 탕수육 고기에 소스를 부으려는 순간 여자주인공이 크게 반발하며 다투다가 사용자의 모바일기기에 소스를 부어먹을 것인지, 소스에 찍어먹을 것인지 결정하는 투표기능이 주어지게 된다. 이후 하나는 소스를 탕수육에 맛있게 부어먹는 줄거리가 진행이 되고 하나는 소스에 맛있게 찍어먹는 줄거리가 펼쳐진다. 
-
-마지막으로는 휴게소 음식이다. 여자주인공이 휴게소음식(알 감자)를 받아와서 먹으려는 중 전화가 오게 되고 전화통화가 끝난 여자 주인공은 다시 알 감자를 먹으려고 하는 찰나, 사용자의 모바일 기기에 흔들어달라는 기능이 나타나게 된다. 사용자가 흔드는 행동을 취하게 되면 여자 주인공이 실수로 알 감자를 팔로 쳐 떨어트리게 되고 속상해하던 여자 주인공은 아까워하며 몰래 알 감자를 주워 먹다가 지나가는 아이에 의해 놀림을 받고 끝나게 된다.
-
-    \item 목적 : 요즈음 대중매체로의 정보전달이 활발하고 참여율이 높은 만큼 일명 ‘먹방’ (먹는 방송)이 확대되고 있다. 단순히 먹는 것이 생존 및 영양소 섭취의 의미가 아니라 삶에서 큰 비율을 차지하며 행복의 수단으로서의 역할이 대두되고 있다. 이처럼 내가 원하는 음식을 원하는 방법으로 먹는 것을 볼 수 있다는 편리함을 주고, 단순히 편리함에서 그치는 것이 아니라 드라마 형식의 먹는 방송을 구현해낼 수 있다는 큰 장점을 가진다. 그 과정에서 거부감 없이 광고효과가 이뤄지고 또 그러한 사용자의 심리에 부응해 주문까지도 간편하게 가능할 수 있게 해 주는 다기능을 사용한 최초의 멀티 인터렉티브 무비이다.  
-\end{enumerate}
-
-\item 기능 구성
-
-\begin{enumerate}%[label={\pgana*.}]
-    \item BRANCH 기능
+    \item 구성도
 
     \begin{figure}[h!]
-        \centering
-      %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{web 화면 – Vote}
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{web 화면 – Vote}
     \end{figure} 
 
-    \begin{figure}[h!]
-        \centering
-      %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{web 화면 – Vote}
-    \end{figure} 
+    \item 스토리 구성
 
-    여자주인공이 배가 고프니, 밥을 먹으러 가자는 메시지를 받고나서 어떤 음식을 먹을지 선택을 하도록 하기 위하여 사용한 Branch 기능이다. 이제 COX 애플리케이션을 사용하는 모바일 기기 사용자는 이 기능으로 하여금 어떻게 이야기를 전개할 것인지 선택을 할 수 있게 된다. 
+        \begin{enumerate}%[label={\pgana*.}]
 
-    \item PUSH (메세지 기능 )
+            \item 주제 : 배고픈 식사시간에 어떤 음식을 먹을 것인지에 대한 주제로 이야기가 전개된다.  
+            \item 등장인물 : 여자주인공, 남자주인공1, 남자주인공2, 그 외 다수
+            \item 원 영상 출처 : tvN 드라마 ‘식샤를 합시다1,2’ 
 
-    \begin{figure}[h!]
-        \centering
-      %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{web 화면 – Vote}
-    \end{figure} 
+            \item 줄거리 : 여자 주인공이 운동을 하다가 휴대폰을 보게 되고 “배고프다~밥먹으러가자!“ 라는 메시지를 받으면서 이야기가 시작된다. 메시지를 받은 사용자의 모바일기기에 3가지 메뉴 중 먹고 싶은 메뉴를 고를 수 있는 선택권이 주어지게 되고 주인공은 치킨, 탕수육, 휴게소 음식(알 감자) 중 원하는 음식을 고르게 된다. 첫 번째로 치킨을 고르게 될 경우 치킨을 먹게 된다. 여자 주인공과 남자주인공1이 치킨을 나눠먹는 사이, 다른 한명의 남자주인공이 뒤늦게 치킨 무를 받아오며 늦게 합류해 함께 치킨을 먹는 모습이 보여 진다. 
 
-이 기능은 앞서 ‘가.’ 에서 언급되었던 메시지이다. 여자 주인공이 운동을 하다가 휴대폰에 온 이 메시지를 보고서 어떤 메뉴를 먹을 것인지 선택하게 된다. 모바일 애플리케이션 사용자는 기기로 이 메시지를 받게 된다.
+        두 번째로는 탕수육이다. 여자주인공과 남자주인공이 사람들과 탕수육을 먹으러 중국집에 가게 된다. 주문한 음식들이 나와져있고 그중 탕수육을 먹게 되는데, 남자주인공이 탕수육 고기에 소스를 부으려는 순간 여자주인공이 크게 반발하며 다투다가 사용자의 모바일기기에 소스를 부어먹을 것인지, 소스에 찍어먹을 것인지 결정하는 투표기능이 주어지게 된다. 이후 하나는 소스를 탕수육에 맛있게 부어먹는 줄거리가 진행이 되고 하나는 소스에 맛있게 찍어먹는 줄거리가 펼쳐진다. 
 
-    \item PUSH LINK 기능
-    
-    \begin{figure}[h!]
-        \centering
-      %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{web 화면 – Vote}
-    \end{figure} 
+        마지막으로는 휴게소 음식이다. 여자주인공이 휴게소음식(알 감자)를 받아와서 먹으려는 중 전화가 오게 되고 전화통화가 끝난 여자 주인공은 다시 알 감자를 먹으려고 하는 찰나, 사용자의 모바일 기기에 흔들어달라는 기능이 나타나게 된다. 사용자가 흔드는 행동을 취하게 되면 여자 주인공이 실수로 알 감자를 팔로 쳐 떨어트리게 되고 속상해하던 여자 주인공은 아까워하며 몰래 알 감자를 주워 먹다가 지나가는 아이에 의해 놀림을 받고 끝나게 된다.
 
-치킨 메뉴에서 여자주인공과 남자주인공들이 치킨을 먹는 중에 모바일 기기 사용자로 하여금 극중 여자 주인공이 치킨을 먹으면서 입고 있는 옷의 정보를 이 기능으로 제공해줄 수 있다. 위의 사진에서 YES 버튼을 누르게 되면 옷의 정보가 담긴 인터넷 URL로 자동으로 접속이 되며 인터넷 창이 뜨게 된다.
+            \item 목적 : 요즈음 대중매체로의 정보전달이 활발하고 참여율이 높은 만큼 일명 ‘먹방’ (먹는 방송)이 확대되고 있다. 단순히 먹는 것이 생존 및 영양소 섭취의 의미가 아니라 삶에서 큰 비율을 차지하며 행복의 수단으로서의 역할이 대두되고 있다. 이처럼 내가 원하는 음식을 원하는 방법으로 먹는 것을 볼 수 있다는 편리함을 주고, 단순히 편리함에서 그치는 것이 아니라 드라마 형식의 먹는 방송을 구현해낼 수 있다는 큰 장점을 가진다. 그 과정에서 거부감 없이 광고효과가 이뤄지고 또 그러한 사용자의 심리에 부응해 주문까지도 간편하게 가능할 수 있게 해 주는 다기능을 사용한 최초의 멀티 인터렉티브 무비이다.  
+        \end{enumerate}
 
-    \item VOTE 기능
+    \item 기능 구성
 
-    \begin{figure}[h!]
-        \centering
-      %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{web 화면 – Vote}
-    \end{figure} 
+        \begin{enumerate}%[label={\pgana*.}]
+            \item BRANCH 기능
 
-    \begin{figure}[h!]
-        \centering
-      %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{web 화면 – Vote}
-    \end{figure} 
+            \begin{figure}[h!]
+                \centering
+            %  \includegraphics[scale=0.5]{170920.png}}
+                \caption{web 화면 – Vote}
+            \end{figure} 
 
-탕수육을 먹는 에피소드에서 탕수육을 어떻게 먹을 것 인지 투표를 하는 기능으로 쓰였다. 약 10초정도의 시간이 주어지고 모바일기기 사용자는 시간 안에 투표를 하면 된다. 이 투표결과를 바탕으로 자연스럽게 BRANCH의 기능 역시 가질 수 있다. 갈래를 자동으로 구분해주어 별도로 BRANCH 선택을 하지 않아줘도 되어 편리하다. 
+            \begin{figure}[h!]
+                \centering
+            %  \includegraphics[scale=0.5]{170920.png}}
+                \caption{web 화면 – Vote}
+            \end{figure} 
 
-    \item MOTION 기능
+            여자주인공이 배가 고프니, 밥을 먹으러 가자는 메시지를 받고나서 어떤 음식을 먹을지 선택을 하도록 하기 위하여 사용한 Branch 기능이다. 이제 COX 애플리케이션을 사용하는 모바일 기기 사용자는 이 기능으로 하여금 어떻게 이야기를 전개할 것인지 선택을 할 수 있게 된다. 
 
-    \begin{figure}[h!]
-        \centering
-      %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{web 화면 – Vote}
-    \end{figure} 
+            \item PUSH (메세지 기능 )
 
-    \begin{figure}[h!]
-        \centering
-      %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{web 화면 – Vote}
-    \end{figure} 
+            \begin{figure}[h!]
+                \centering
+            %  \includegraphics[scale=0.5]{170920.png}}
+                \caption{web 화면 – Vote}
+            \end{figure} 
+
+        이 기능은 앞서 ‘가.’ 에서 언급되었던 메시지이다. 여자 주인공이 운동을 하다가 휴대폰에 온 이 메시지를 보고서 어떤 메뉴를 먹을 것인지 선택하게 된다. 모바일 애플리케이션 사용자는 기기로 이 메시지를 받게 된다.
+
+            \item PUSH LINK 기능
+            
+            \begin{figure}[h!]
+                \centering
+            %  \includegraphics[scale=0.5]{170920.png}}
+                \caption{web 화면 – Vote}
+            \end{figure} 
+
+        치킨 메뉴에서 여자주인공과 남자주인공들이 치킨을 먹는 중에 모바일 기기 사용자로 하여금 극중 여자 주인공이 치킨을 먹으면서 입고 있는 옷의 정보를 이 기능으로 제공해줄 수 있다. 위의 사진에서 YES 버튼을 누르게 되면 옷의 정보가 담긴 인터넷 URL로 자동으로 접속이 되며 인터넷 창이 뜨게 된다.
+
+            \item VOTE 기능
+
+            \begin{figure}[h!]
+                \centering
+            %  \includegraphics[scale=0.5]{170920.png}}
+                \caption{web 화면 – Vote}
+            \end{figure} 
+
+            \begin{figure}[h!]
+                \centering
+            %  \includegraphics[scale=0.5]{170920.png}}
+                \caption{web 화면 – Vote}
+            \end{figure} 
+
+        탕수육을 먹는 에피소드에서 탕수육을 어떻게 먹을 것 인지 투표를 하는 기능으로 쓰였다. 약 10초정도의 시간이 주어지고 모바일기기 사용자는 시간 안에 투표를 하면 된다. 이 투표결과를 바탕으로 자연스럽게 BRANCH의 기능 역시 가질 수 있다. 갈래를 자동으로 구분해주어 별도로 BRANCH 선택을 하지 않아줘도 되어 편리하다. 
+
+            \item MOTION 기능
+
+            \begin{figure}[h!]
+                \centering
+            %  \includegraphics[scale=0.5]{170920.png}}
+                \caption{web 화면 – Vote}
+            \end{figure} 
+
+            \begin{figure}[h!]
+                \centering
+            %  \includegraphics[scale=0.5]{170920.png}}
+                \caption{web 화면 – Vote}
+            \end{figure} 
 
 
-휴게소 음식 (알 감자) 줄거리 부분에서 여자주인공이 전화를 끝낸 직후 위와 같이 화면상에 “흔들어주세요!“
+        휴게소 음식 (알 감자) 줄거리 부분에서 여자주인공이 전화를 끝낸 직후 위와 같이 화면상에 “흔들어주세요!“
 
-라는 문구가 뜨게 된다. 모바일 사용자는 해당 문구를 본 후에, 자신의 모바일 기기를 흔들게 된다. 흔들면 감자가 쏟아지는 줄거리가 전개될 때 이와 같은 기능을 사용하였다.
+        라는 문구가 뜨게 된다. 모바일 사용자는 해당 문구를 본 후에, 자신의 모바일 기기를 흔들게 된다. 흔들면 감자가 쏟아지는 줄거리가 전개될 때 이와 같은 기능을 사용하였다.
 
-    \item PRODUCT 기능
-    
-    \begin{figure}[h!]
-        \centering
-      %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{web 화면 – Vote}
-    \end{figure} 
+            \item PRODUCT 기능
+            
+            \begin{figure}[h!]
+                \centering
+            %  \includegraphics[scale=0.5]{170920.png}}
+                \caption{web 화면 – Vote}
+            \end{figure} 
 
-마지막으로 이 기능은 치킨 메뉴의 줄거리가 전개될 때에 사용자가 치킨이 먹고 싶어지겠다는 생각이 들 때 즈음, 곧바로 주문을 할 수 있게 끔 해주는 기능이다. 어떤 영상을 보고 있을 때 내가 보는 영상에서 사고 싶은 혹은 먹고 싶은 것을 손쉽게 구매할 수 있게 하는 기능은 어떤 기능보다도 광고효과를 비롯해 구매 욕구를 불러일으킬 수 있다. 사용자(소비자) 입장에서도 손쉽게 구매를 할 수 있다는 점에서 효율적이고 편리한 기능이라고 할 수 있다.
-\end{enumerate}
+        마지막으로 이 기능은 치킨 메뉴의 줄거리가 전개될 때에 사용자가 치킨이 먹고 싶어지겠다는 생각이 들 때 즈음, 곧바로 주문을 할 수 있게 끔 해주는 기능이다. 어떤 영상을 보고 있을 때 내가 보는 영상에서 사고 싶은 혹은 먹고 싶은 것을 손쉽게 구매할 수 있게 하는 기능은 어떤 기능보다도 광고효과를 비롯해 구매 욕구를 불러일으킬 수 있다. 사용자(소비자) 입장에서도 손쉽게 구매를 할 수 있다는 점에서 효율적이고 편리한 기능이라고 할 수 있다.
+        \end{enumerate}
 \end{enumerate}
 
 참고문헌
@@ -1610,7 +1606,7 @@ RAM : 16GB
 
 [9] https://github.com/MarekKowalski/FaceSwap
 
-[10] $https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation$
+[10] \protect{https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation}
 
 [11] https://github.com/deepfakes/faceswap
 
