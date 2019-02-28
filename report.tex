@@ -1,6 +1,6 @@
 
 \documentclass{oblivoir}
- 
+    
 \usepackage{graphicx}%그림을 업로드하기위한 패키지
 
 
@@ -15,13 +15,22 @@
 
 \usepackage{syntonly}
 %\syntaxonly
-
+%\usepackage{urlbst}
 %%%%%%%% for itemize in tabu :  https://tex.stackexchange.com/questions/381625/lists-in-tabu-environment
 \usepackage{etoolbox}
+\usepackage{url}
 \AtBeginEnvironment{tabu}{\setlist[itemize]{wide = 0pt, leftmargin = *}}
 
 \makeatletter
 \newcommand*{\compress}{\@minipagetrue}
+\newcommand{\spec}{
+\begin{itemize}
+    \item OS : windows 10 / 64bit
+    \item CPU : gtx 1060 6GB
+    \item GPU : i7 - 7700
+    \item RAM : 16GB
+\end{itemize}
+}
 \makeatother
 
 
@@ -152,39 +161,39 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
 제  1  장 얼굴모양 추출, 얼굴 추적, 얼굴영역 변형 기술 동향 분석
 
-   제  1  절 얼굴교체 기술의 요소기술
+제  1  절 얼굴교체 기술의 요소기술
 
-   제  2  절 얼굴교체 기술 국내외 연구동향
+제  2  절 얼굴교체 기술 국내외 연구동향
 
 제  2  장 2D-Faceswap 모델의 기술 분석 및 구현
 
-   제  1  절 2D-Faceswap 모델의 개요와 얼굴 합성 알고리즘 분석
+제  1  절 2D-Faceswap 모델의 개요와 얼굴 합성 알고리즘 분석
 
-   제  2  절 2D-Faceswap 모델의 분석
+제  2  절 2D-Faceswap 모델의 분석
 
-   제  3  절 2D-Faceswap 모델의 테스트 환경 및 결과
+제  3  절 2D-Faceswap 모델의 테스트 환경 및 결과
 
 제  3  장 Openpose를 활용한 Faceswap 모델의 기술 분석 및 구현
 
-   제  1  절 Openpose 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석
+제  1  절 Openpose 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석
 
-   제  2  절 Openpose 얼굴 변형 모델의 테스트 환경 및 결과
+제  2  절 Openpose 얼굴 변형 모델의 테스트 환경 및 결과
 
 제  4  장 딥페이크(Original-High-Resolution Model)의 기술 분석 및 구현
 
-   제  1  절 딥페이크의 개요와 얼굴 합성 알고리즘 분석
+제  1  절 딥페이크의 개요와 얼굴 합성 알고리즘 분석
 
-   제  2  절 딥페이크 내의 모델 분석
+제  2  절 딥페이크 내의 모델 분석
 
-   제  3  절 딥페이크 모델의 테스트 환경 및 결과
+제  3  절 딥페이크 모델의 테스트 환경 및 결과
 
 제  5  장 생성적 적대 신경망(GAN)을 활용한 Faceswap 모델의 기술 분석 및 구현
 
-   제  1  절 GAN을 활용한 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석
+제  1  절 GAN을 활용한 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석
 
-   제  2  절 GAN을 활용한 얼굴 변형 모델 분석
+제  2  절 GAN을 활용한 얼굴 변형 모델 분석
 
-   제  3  절 GAN을 활용한 얼굴 변형 모델의 테스트 환경 및 결과
+제  3  절 GAN을 활용한 얼굴 변형 모델의 테스트 환경 및 결과
 
 제  6  장 서버(Server)를 통한 위 네 가지 기술의  연결 과정?구현? 및 결과  
 
@@ -229,14 +238,14 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 얼굴 교체 기술은 세부적인 기술 요소에 상관없이 그림 1에 보인 대략적인 순서도의 절차를 따르게 된다. 최근 활발한 연구가 이루어지고 있는 Deep Learning기반의 얼굴 교체 기술 또한 마찬가지이다. 
 
 \begin{figure}[h!]
-    \centering
-    %  \includegraphics[scale=0.5]{170920.png}}
-    \caption{얼굴 교체 순서도}
+\centering
+%  \includegraphics[scale=0.5]{170920.png}}
+\caption{얼굴 교체 순서도}
 \end{figure}
 
 다음은 대략적으로 얼굴 교체에 사용되어 지고 있는 요소기술을 설명한다.
 
-                            
+                        
 \begin{enumerate}%[label={\pgana*.}]
     \item  얼굴 검출(Face Detection)
 
@@ -312,9 +321,9 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
 
 \begin{figure}[h!]
-    \centering
-    %  \includegraphics[scale=0.5]{170920.png}}
-    \caption{ 시기 별 기술과 정확도(LFW) (인용 [6])    }
+\centering
+%  \includegraphics[scale=0.5]{170920.png}}
+\caption{ 시기 별 기술과 정확도(LFW) (인용 [6])    }
 \end{figure}
 
 
@@ -396,19 +405,19 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 \iffalse
 \begin{table}[h!]
 \centering
-    \begin{tabular}{|c|c|}
-        \hline
-        \rowcolor{lightgray} Phase 1 & Phase 2 \\ \hline
-        Gabor magnitude & LBP \\ \hline
-        Gabor magnitude + phase  & LBP \\ \hline
-        Log-Gabor &  LBP \\ \hline
-        Gabor magnutude  & LBP \\ \hline
-        Local edge through different orientations &  LBP \\ \hline
-        Sobel or Gabor + Sobel & LBP \\ \hline 
-        Gabor Volume  & LBP \\ \hline
-        Discriminantly filtered image & LBP \\ \hline
-        \hline
-    \end{tabular}
+\begin{tabular}{|c|c|}
+    \hline
+    \rowcolor{lightgray} Phase 1 & Phase 2 \\ \hline
+    Gabor magnitude & LBP \\ \hline
+    Gabor magnitude + phase  & LBP \\ \hline
+    Log-Gabor &  LBP \\ \hline
+    Gabor magnutude  & LBP \\ \hline
+    Local edge through different orientations &  LBP \\ \hline
+    Sobel or Gabor + Sobel & LBP \\ \hline 
+    Gabor Volume  & LBP \\ \hline
+    Discriminantly filtered image & LBP \\ \hline
+    \hline
+\end{tabular}
 \caption{Openpose의 인터프리터 셋팅 }
 \end{table}
 \fi
@@ -416,29 +425,29 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
 앞서 설명한 Filter-based 방식에서의 단점은 제약이 있는 상황(constraint circumstance)에서만 좋은 결과를 얻는다는 것이다. 예를 들어, illuminate, pose 등의 복합적인(제약이 없는 – unconstraint circumstance) 상황이 추가되면 얼굴 특징을 잘 추출하지 못한다. 이러한 점을 해결하기 위해 연구자들은 주로 Deep Learning 알고리즘(대표적으로 CNN)을 사용하고 있다. 또한 얼굴 검출(인식) 및 특징점 추출 관련 기술에서는 이미 Deep Learning에 기반한 기술이 이전 기술(ex: Filter-based)에 비해 99\%의 정확도를 보이는 등 상당히 좋은 결과를 보이고 있어 이제는 관련 기술 연구에 있어서는 Deep Learning을 필수적으로 사용하게 되었다.
 \begin{center}
-    \begin{tabu} to \linewidth{|X[1,c,m]|>{\compress}X[3.5,c,m]|}%
-        \tabucline-%
-        %%%%% 1st row
-        Framework & Details \\ \tabucline-
-        %%%%% 2nd row
-        %%%%% 2-1 
-    CNN 
-        &%
-        %%%%% 2-2
-        \begin{itemize}
-            \item output layer directly connected with the penultimate and antepenultimate layer 
-            \item bilinear CNN 
-            \item 5-layer CNN + multitasking  
-            \item frontal alignment by 3D face +  7 layer CNN 
-            \item CNN with feature sharing  
-            \item joint feature projection learning  
-            \item supervisory signals involved  
-            \item two lightened CNN models with MFM, inception layer and stacked convolution 
-            \item one CNN for canonical view recovery and another CNN for feature extraction  
-            \item CNNs combined with stacked auto-encoder 
-        \end{itemize}
-        \\ \tabucline-
-        \end{tabu}
+\begin{tabu} to \linewidth{|X[1,c,m]|>{\compress}X[3.5,c,m]|}%
+    \tabucline-%
+    %%%%% 1st row
+    Framework & Details \\ \tabucline-
+    %%%%% 2nd row
+    %%%%% 2-1 
+CNN 
+    &%
+    %%%%% 2-2
+    \begin{itemize}
+        \item output layer directly connected with the penultimate and antepenultimate layer 
+        \item bilinear CNN 
+        \item 5-layer CNN + multitasking  
+        \item frontal alignment by 3D face +  7 layer CNN 
+        \item CNN with feature sharing  
+        \item joint feature projection learning  
+        \item supervisory signals involved  
+        \item two lightened CNN models with MFM, inception layer and stacked convolution 
+        \item one CNN for canonical view recovery and another CNN for feature extraction  
+        \item CNNs combined with stacked auto-encoder 
+    \end{itemize}
+    \\ \tabucline-
+    \end{tabu}
 \end{center}
 
 \section{얼굴 교체 및 인식 기술 관련 최근 국내외 연구동향}
@@ -449,15 +458,15 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 위 사진은 연도별로 좋은 성능을 보인 논문을 정리해 놓은 것이다. 2015년 이후로 모델에 관련된 연구보다는 Loss 관련 연구로 분위기가 넘어간 것이 보이는데, 이를 citation에 근거하여 설명할 수 있다. 각 연도별 state-of-art 논문의 citation수를 $>1500$, $> 500$. $> 100$ 단위로 나누어서 구분해 보았다. 
 
 \begin{figure}[h!]
-    \centering
-    %  \includegraphics[scale=0.5]{170920.png}}
-    \caption{연도 별 연구 동향 (인용 [6])}
+\centering
+%  \includegraphics[scale=0.5]{170920.png}}
+\caption{연도 별 연구 동향 (인용 [6])}
 \end{figure}
 
 \begin{itemize}
-    \item   citation $> 1500$ : Deepface, FaceNet, VGGFace
-    \item   citation $> 500$  : DeepID2, DeepID, Center loss
-    \item   citation $> 100$  : DeepID2+, DeepID3, L-softmax, A-softmax
+\item   citation $> 1500$ : Deepface, FaceNet, VGGFace
+\item   citation $> 500$  : DeepID2, DeepID, Center loss
+\item   citation $> 100$  : DeepID2+, DeepID3, L-softmax, A-softmax
 \end{itemize}
 
 주로 1500이 넘는 인용수를 가지는 논문은 15~16년도에 집중되어 있는 것을 볼 수 있는데, 이 현상이 최근 얼굴 관련 연구 동향이 바뀌었다는 것을 설명하여 준다. 실제로 최근 연구되어지고 있는 GAN에서 대부분 얼굴 검출 또는 특징점 추출 과정에서 VGGFace나 FaceNet을 주로 사용하는 것을 볼 수 있다. 
@@ -465,36 +474,36 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 다음은 그 외의 내용을 설명한다.
 \begin{enumerate}%[label={\pgana*.}]
 
-    \item NAVER : 네이버는 최근 이미지, 음성인식, 자연어 처리 등에서 우수한 성적을 거두고 있으며, 특히 자연어 처리 분야에서 세계 1위의 자리를 차지할 만큼 AI에 대한 투자가 활발하다. 이에 얼굴 관련해서는 웹툰을 이용하여 소비자들에게 실험적으로 선보인 만화가 있다. 네이버 웹툰 ‘마주쳤다’ 는 독자의 사진을 활용해 웹툰 이미지로 생성했으며 독자가 웹툰 속 주인공이 되는 경험을 제공했다. 또한, 네이버 ‘D2 스타트업 팩토리’에 입주한 스타트업 알레시오는 GAN을 응용해 태아의 입체 초음파 사진을 생후 아기의 얼굴로 변환해주는 서비스를 준비 중이다.
+\item NAVER : 네이버는 최근 이미지, 음성인식, 자연어 처리 등에서 우수한 성적을 거두고 있으며, 특히 자연어 처리 분야에서 세계 1위의 자리를 차지할 만큼 AI에 대한 투자가 활발하다. 이에 얼굴 관련해서는 웹툰을 이용하여 소비자들에게 실험적으로 선보인 만화가 있다. 네이버 웹툰 ‘마주쳤다’ 는 독자의 사진을 활용해 웹툰 이미지로 생성했으며 독자가 웹툰 속 주인공이 되는 경험을 제공했다. 또한, 네이버 ‘D2 스타트업 팩토리’에 입주한 스타트업 알레시오는 GAN을 응용해 태아의 입체 초음파 사진을 생후 아기의 얼굴로 변환해주는 서비스를 준비 중이다.
 
-    \begin{figure}[h!]
-        \centering
-    %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{ GAN을 활용한 네이버 웹툰 ‘마주쳤다’ <출처: 네이버랩스>}
-    \end{figure}
-
-
-    \item 미국 워싱턴 대학교 : 워싱턴 대학교의 연구진은 버락 오바마 전 미국 대통령의 가짜 영상을 만들어냈다. 오바마 전 대통령의 연설 영상에서 음성을 따서 이 음성에 맞게 입모양을 내도록 학습시켜 합성해 실제로는 존재하지 않는 영상을 만들어냈다. 
-
-    \begin{figure}[h!]
-        \centering
-    %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{  버락 오바마 전 미국 대통령의 가짜 영상 <출처: 워싱턴대학교>}
-    \end{figure}
+\begin{figure}[h!]
+    \centering
+%  \includegraphics[scale=0.5]{170920.png}}
+    \caption{ GAN을 활용한 네이버 웹툰 ‘마주쳤다’ \protect\footnote{출처: 네이버랩스}}
+\end{figure}
 
 
-    \item Unsupervised Image-to-Image Translation with Generative Adversarial Networks : 이 연구는 “image-to-image translation” 문제를 GAN을 활용하여 해결한 연구이다. 총 2가지에 대해 실험을 하였다. 1) Gender transformation 2) Face swapping 하지만 이 연구는 obama-Hillary 데이터셋에 한정된 실험을 하였으며, edge detection에 있어서 부족한 결과를 내었다.
+\item 미국 워싱턴 대학교 : 워싱턴 대학교의 연구진은 버락 오바마 전 미국 대통령의 가짜 영상을 만들어냈다. 오바마 전 대통령의 연설 영상에서 음성을 따서 이 음성에 맞게 입모양을 내도록 학습시켜 합성해 실제로는 존재하지 않는 영상을 만들어냈다. 
 
-    \begin{figure}[h!]
-        \centering
-    %  \includegraphics[scale=0.5]{170920.png}}
-        \caption{ GAN Architecture(인용 [5])}
-    \end{figure}
+\begin{figure}[h!]
+    \centering
+%  \includegraphics[scale=0.5]{170920.png}}
+    \caption{  버락 오바마 전 미국 대통령의 가짜 영상 \protect\footnote{출처: 워싱턴대학교}}
+\end{figure}
 
-    \end{enumerate}
 
-    \subsection{얼굴교체 기술의 문제점}
-    \begin{enumerate}
+\item Unsupervised Image-to-Image Translation with Generative Adversarial Networks : 이 연구는 “image-to-image translation” 문제를 GAN을 활용하여 해결한 연구이다. 총 2가지에 대해 실험을 하였다. 1) Gender transformation 2) Face swapping 하지만 이 연구는 obama-Hillary 데이터셋에 한정된 실험을 하였으며, edge detection에 있어서 부족한 결과를 내었다.
+
+\begin{figure}[h!]
+    \centering
+%  \includegraphics[scale=0.5]{170920.png}}
+    \caption{ GAN Architecture(인용 [5])}
+\end{figure}
+
+\end{enumerate}
+
+\subsection{얼굴교체 기술의 문제점}
+\begin{enumerate}
     \item technical model : 
 
     얼굴 검출 및 특징점 관련 기술에 대해서는 커다란 이슈가 없는 상황이면서 이미 사람의 수준을 뛰어넘어 더욱 향상되어질 상황만 남은 상태이다. 최근 중국이 1000만개의 데이터셋을 이용하여 세계 1위를 차지한 것이 화제가 되었다. 반면 얼굴 관련 알고리즘에 우수한 성적을 꾸준히 보여왔던 미국은 10위 안에 딱 1개의 팀만이 들어가 있었으며, 이에 연구자들은 기술적인 모델보다는 데이터셋에 대해 훨씬 많은 관심을 보였다. 따라서 향후 연구에서는 기술적인 모델은 가장 결과가 자연스러운 GAN을 활용한 연구를 벤치마킹(+응용)하여 가져다 쓰되, 데이터셋이나 하드웨어에 대한 깊은 고민이 있어야 할 것이다.
@@ -539,7 +548,7 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
 이 모델에서 쓰이는 기술 중 하나인 CANDIDE는 여러 개의 정점과 이를 이은 삼각형을 통해서 글로벌 및 로컬 작업 단위에 의해서 제어된다.
 
- 
+
 
 \begin{figure}[h!]
 \centering
@@ -592,27 +601,19 @@ The different versions of Candide (click for larger images).}
 
     여기서 $s$는 투영된 모양, $a$는 배율의 매개변수, $P$는 3D 모양을 회전시키는 회전 행렬의 처음 두 행, $S_0$는 중립면의 모양, $w_i$은 블렌드 모양의 가중치, $S_i$은 블렌드 쉐이프, $t$는 2D 변환 벡터, $n$은 블렌드 쉐이프의 수이다.
     모델 피팅은 투영된 모양과 랜드마크 간의 차이를 최소화하여 진행된다. 모양과 랜드마크의 차이의 최소화는 Gauss Newton방법을 이용하여 블렌드 형태의 가중치, 스케일링, 회전 및 평행 이동 등 다양한 변환을 수행한다.(인용 [9])
-    \end{itemize}
+\end{itemize}
 
 \section{2D-Faceswap 모델의 테스트 환경 및 결과}
 
-\subsection{실행환경}
-
-OS : windows 10 / 64bit
-
-CPU : gtx 1060 6GB
-
-GPU : i7 - 7700
-
-RAM : 16GB
-
-\subsection{특징}
+\subsection{테스트 환경}
+\spec
+\subsection{결과}
 
 데이터 셋이 1개면 되기 때문에 deep learning을 이용한 방법과 달리 계산량이 적어서 실시간으로 변 환이 가능하며 결과를 바로 볼 수 있다. 그리고 정면영상의 경우 상대적으로 짧은 시간에 좋은 결과 를 볼 수 있다.
 
 실시간으로 소통이라는 경험을 원하는 사람은 이를 통한 방법으로 faceswap을 지원하면 될 것이다.  하지만 데이터 셋이 1개이며 이를 통한 정점 추출과 3D modeling은 다양한 각도에서 많은 양의 데이 터를 사용하는 deep learning 모델과는 결과물의 퀄리티 차이가 심하다. 일부 화면에서는 심하게 노이 즈가 발생하는 경우도 있고 얼굴인식을 정확하게 하지 못하는 경우 합성 자체가 아예 실행되지 않는 다.
 
-\subsection{ 결과사진 }
+결과사진 
 
 \begin{figure}[h!]
 \centering
@@ -668,17 +669,9 @@ Openpose를 앞선 모델에 추가함으로써 얼굴 변형에 더 많은 70�
 
 \section{Openpose를 활용한 얼굴 변형 모델의 테스트 환경 및 결과}
 
-\subsection{실행환경}
-
-OS : windows 10 / 64bit
-
-CPU : i7 - 7700
-
-GPU : 1060 6GB
-
-RAM : 16GB
-
-\subsection{ 결과사진 }
+\subsection{테스트 환경}
+\spec
+\subsection{ 결과 }
 
 학습된 Openpose를 활용한 얼굴 변형 모델을 테스트한 결과는 다음과 같다.
 
@@ -698,7 +691,7 @@ RAM : 16GB
 
 딥페이크란 인공지능을 이용하여 영상에 얼굴을 합성시킬 수 있는 기술이다. 미국 커뮤니티사이트 레딧에서 deepfakes는 이름의 유저가 TensorFlow같은 오픈소스 소프트웨어를 이용하여 유명연예인과 포르노를 합성한 것이 이 기술의 시작이다.
 
-우리가 이용한 (인용 [11])깃허브의 소스코드(https://github.com/deepfakes/faceswap)에는 여러가지 모델들이 들어있는데 그 중 오토인코더를 사용한 Original-High-Res 모델을 사용하여 실험을 진행했다.
+우리가 이용한 (인용 [11]) 깃허브의 소스코드\footnote{\protect\url{https://github.com/deepfakes/faceswap}}에는 여러가지 모델들이 들어있는데 그 중 오토인코더를 사용한 Original-High-Res 모델을 사용하여 실험을 진행했다.
 
 딥페이크의 얼굴 합성 과정은 가장 먼저 학습시키고자 하는 데이터 셋을 준비하여 얼굴을 인지한다. 이 얼굴인지 과정의 기술은 dlib-HOG, dlib-CNN이 쓰인다. 그 후 얼굴 피처를 따로 추출한다. 이후 인코딩이 쉽도록하기 위한 얼굴정렬과정을 거친다. 인코딩 단계에서 얼굴의 특징점 예를 들면 눈, 코, 입, 등의 부분들을 Deep Convolutional Neural Network(딥 컨볼루션 신경망)을 이용하여 학습시킨 뒤 얼굴을 적절하게 잘라내고 적절한 블러와 샤프닝 등 추가 가공을 하여 얼굴을 합성한다.
 
@@ -758,34 +751,26 @@ ADAM이란 기존의 최적화 알고리즘의 아이디어가 발전과 개선�
 
 \section{ 딥페이크 모델의 테스트 환경 및 결과}
 
-실험환경 :
-
-OS : windows 10 / 64bit
-
-CPU : i7 - 7700
-
-GPU : 1060 6GB
-
-RAM : 16GB
-
-특징 :
+\subsection{테스트 환경 }
+\spec
+\subsection{결과}
 
 본 프로그램을 통해 학습을 하고 얼굴을 합성하는 것은 위에서 연구한 2D-faceswap 모델과  openpose 모델과는 다르게 학습을 미리 실행하고 얼굴을 합성한다는 점에서 실시간으로 반응하기 어 렵다는 점이 있다. 즉 결과를 실시간으로 확인하기 어려우므로 결과를 확인하고 수정한 것을 반영하 는데 오랜 시간이 걸린다. 합성의 측면에서는 정면과 좌우 15도 정도의 각도에서는 상당히 자연스러 운 합성을 보여줬으며 고개를 아래로 숙이거나 위로 들어올리는 경우, 얼굴이 장애물로 인해 일정부 분 가려진 경우에는 합성이 이루어지지 않은 점이 한계라고 볼 수 있다.
 
-다. 결과사진 :
+결과사진 :
 
 \begin{figure}[h!]
-    \centering
-  %  \includegraphics[scale=0.5]{170920.png}}
+\centering
+%  \includegraphics[scale=0.5]{170920.png}}
 \caption{원 이미지(좌), 얼굴 변형 된 이미지(우)}
 \end{figure}
 
 \begin{figure}[h!]
-    \centering
-  %  \includegraphics[scale=0.5]{170920.png}}
+\centering
+%  \includegraphics[scale=0.5]{170920.png}}
 \caption{위 : 원본 / 아래 : 합성}
 \end{figure}
-    
+
 \chapter{ 생성적 적대 신경망(GAN)을 활용한 Faceswap 모델의 기술 분석 및 구현}
 
 
@@ -799,7 +784,7 @@ GAN은 데이터가 이루는 확률분포를 예측하여 신경망을 통해 �
 \begin{figure}[h!]
 \centering
 %  \includegraphics[scale=0.5]{170920.png}}
-\caption{GAN의 학습 과정 <출처:네이버랩스>}
+\caption{GAN의 학습 과정 \protect\footnote{출처:네이버랩스}}
 \end{figure}
 
 
@@ -809,14 +794,14 @@ GAN은 주로 이미지 생성에 활용되며 일반적인 경우 실제의 이
 \begin{figure}[h!]
 \centering
 %  \includegraphics[scale=0.5]{170920.png}}
-\caption{GAN을 통해 유명인 사진을 바탕으로 만들어진 허구의 인물 <출처:엔비디아>}
+\caption{GAN을 통해 유명인 사진을 바탕으로 만들어진 허구의 인물 \protect\footnote{출처:엔비디아}}
 \end{figure}
 
 
 \begin{figure}[h!]
 \centering
 %  \includegraphics[scale=0.5]{170920.png}}
-\caption{반 고흐의 그림을 생성해 내는 빈센트 AI <출처:엔비디아>}
+\caption{반 고흐의 그림을 생성해 내는 빈센트 AI \protect\footnote{출처:엔비디아}}
 \end{figure}
 
 
@@ -827,139 +812,129 @@ GAN을 이용한 얼굴 변형 모델(인용 [13])을 이용하였다.
 이 모델에서는 GAN의 안정화를 위한 연구 중 결과가 좋은 생성자와 구분자 모델에 Convolution Layer가 사용된 DCGAN(Deep Convolution GAN)을 이용하였다. 본 논문에서는 얼굴을 바꾸고자 하는 Original Video에서 뽑아낸 얼굴 데이터의 분포를 바꾸게 될 얼굴 데이터의 분포로 변형시킬 수 있는 네트워크를 학습하는 것을 목표로 하였다.
 
 먼저, 얼굴을 바꾸려고 하는 영상을 특정 프레임으로 잘라 이미지화한다. 얻어진 이미지에 MTCNN을 사용하여 얼굴부분을 감지하고,  정면을 바라보는 사진처럼 정렬하여 126*126의 얼굴 데이터 셋을 확보한다. 바뀔 얼굴이 담긴 영상도 같은 방식을 취하여 데이터 셋을 확보한다. 두 얼굴 데이터 셋을 이용해 DCGAN의 학습을 진행하고, 완료된 후 바꾸려는 얼굴 데이터 셋을 신경망에 입력시켜 얼굴을 변형한다.
-
-1. MTCNN을 활용한 영상 속 얼굴 이미지 감지
-
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{MTCNN의 얼굴 감지 <출처:https://github.com/ipazc/mtcnn>}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{MTCNN 논문참고}
-\end{figure}
+\begin{enumerate}
+    
+    \item MTCNN을 활용한 영상 속 얼굴 이미지 감지
 
 
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{MTCNN의 얼굴 감지 \protect\footnote{\protect\url {https://github.com/ipazc/mtcnn}}}
+    \end{figure}
 
-MTCNN은 이미지에서 얼굴 부분만을 crop하는 방법 중 하나로 원 이미지를 여러 스케일로 변환하고 각 스케일에서 신경망을 적용하여 스케일마다 적절한 얼굴 특징점을 포착하여 전체 얼굴 부분을 찾아내는 방법이다. 신경망의 종류는 P-Net, R-Net, Q-Net이 있으며 이미지의 스케일에 따라 다른 신경망을 적용하여 특징점을 찾아내게 된다.
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{MTCNN의 P-Net, R-Net, Q-Net}
-\end{figure}
-
-
-GAN을 이용한 얼굴 변형 모델에서는 학습에 데이터를 수집하기 위해 MTCNN을 사용하여 얼굴이미지를 수집한다. 먼저 얼굴을 바꾸고 싶은 소스 영상을 60FPS로 추출하여 초당 60개의 이미지를 소스영상을 통해 수집한다.
-
-\begin{figure}[h!]%사진X
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{영상 자른거 결과사진}
-\end{figure}
-
-
-영상에서 얻은 모든 이미지를 활용하여 MTCNN을 통해 얼굴부분만을 crop한 새로운 이미지를 얻는다. 여기서 얼굴부분만 crop한 이미지는 원이미지에서 얼굴이 없을 경우 이미지가 만들어지지 않으다. 얼굴이 있는 이미지라도 MTCNN의 감지 에러로 인하여 얼굴 부분의 crop이 안되거나 얼굴이 아닌 다른 부분을 crop할 수 있는 경우가 있고 얼굴이 없는 이미지라도 MTCNN이 오판을 하여 특정 부분을 얼굴로 인식하여 해당부분을 crop한 이미지가 생성될 수 도 있다. 위와 같이 얼굴 부분만을 crop하여 생성된 이미지 중 잘못된 결과는 사용자가 판단하여 삭제를 한후 해당 이미지들로 학습에 사용하게 된다.
-
-\begin{figure}[h!]%사진X
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{MTCNN으로 얼굴부분 감지된거랑 안된거 사진}
-\end{figure}
-
-
-2. 학습 과정에 필요한 얼굴 이미지의 binary mask 생성
-
-학습을 위해 먼저 생성된 얼굴이미지에서 $binary mask$를 생성하기 위해 $python$의 $face_alignment$ 패키지와 $dlib$ 패키지를 이용하게 된다.
-
-Binary mask 생성에 앞서 먼저 얼굴 이미지들을 사람의 정면 이미지처럼 변환하게 된다. dlib 패키지를 통해 얼굴이미지에서 사람의 얼굴 특징점을 파악하고 이 얼굴 특징점들이 사람이 정면을 보고 있는 이미지와 특징점들의 위치가 비슷해지도록 이미지 회전 및 이미지 확대, 축소를 통해 정면 얼굴이미지를 수집한다.
-\begin{figure}[h!] %사진X
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{생성된 정면얼굴이미지}
-\end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{MTCNN 논문참고}
+    \end{figure}
 
 
 
-정면 얼굴 이미지가 모두 생성이 되면 dlib 패키지를 이용하여 해당 이미지들을 통해 binary mask 이미지를 생성하고 정면 얼굴이미지와 binary mask 이미지가 GAN 모델의 학습에 이용된다. 학습에 사용되는 이미지의 크기는 64*64 pixels이다. 
-\begin{figure}[h!]%사진X
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{binary mask 생성결과}
-\end{figure}
+    MTCNN은 이미지에서 얼굴 부분만을 crop하는 방법 중 하나로 원 이미지를 여러 스케일로 변환하고 각 스케일에서 신경망을 적용하여 스케일마다 적절한 얼굴 특징점을 포착하여 전체 얼굴 부분을 찾아내는 방법이다. 신경망의 종류는 P-Net, R-Net, Q-Net이 있으며 이미지의 스케일에 따라 다른 신경망을 적용하여 특징점을 찾아내게 된다.
+
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{MTCNN의 P-Net, R-Net, Q-Net}
+    \end{figure}
 
 
-3. GAN 얼굴변형 모델의 Network Architecture
+    GAN을 이용한 얼굴 변형 모델에서는 학습에 데이터를 수집하기 위해 MTCNN을 사용하여 얼굴이미지를 수집한다. 먼저 얼굴을 바꾸고 싶은 소스 영상을 60FPS로 추출하여 초당 60개의 이미지를 소스영상을 통해 수집한다.
 
-GAN 얼굴변형 모델의 생성자와 구분자 신경망 구조는 다음과 같으며 생성자 신경망은 input 이미지의 통계적 분포를 판단하여 가짜이미지를 생성해 내며 구분자 신경망은 생성자가 만들어 낸 이미지가 가짜인지 실제 이미지인지 판단해 나가면서 두 신경망이 적대적으로 학습된다.
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{생성자 신경망 구조 <출처:https://github.com/shaoanlu/faceswap-GAN>}
-\end{figure}
+    \begin{figure}[h!]%사진X
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{영상 자른거 결과사진}
+    \end{figure}
 
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{구분자 신경망 구조 <출처:https://github.com/shaoanlu/faceswap-GAN>}
-\end{figure}
+    영상에서 얻은 모든 이미지를 활용하여 MTCNN을 통해 얼굴부분만을 crop한 새로운 이미지를 얻는다. 여기서 얼굴부분만 crop한 이미지는 원이미지에서 얼굴이 없을 경우 이미지가 만들어지지 않으다. 얼굴이 있는 이미지라도 MTCNN의 감지 에러로 인하여 얼굴 부분의 crop이 안되거나 얼굴이 아닌 다른 부분을 crop할 수 있는 경우가 있고 얼굴이 없는 이미지라도 MTCNN이 오판을 하여 특정 부분을 얼굴로 인식하여 해당부분을 crop한 이미지가 생성될 수 도 있다. 위와 같이 얼굴 부분만을 crop하여 생성된 이미지 중 잘못된 결과는 사용자가 판단하여 삭제를 한후 해당 이미지들로 학습에 사용하게 된다.
+
+    \begin{figure}[h!]%사진X
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{MTCNN으로 얼굴부분 감지된거랑 안된거 사진}
+    \end{figure}
+
+
+    \item 학습 과정에 필요한 얼굴 이미지의 binary mask 생성
+
+    학습을 위해 먼저 생성된 얼굴이미지에서 $binary mask$를 생성하기 위해 $python$의 $face-alignment$ 패키지와 $dlib$ 패키지를 이용하게 된다.
+
+    Binary mask 생성에 앞서 먼저 얼굴 이미지들을 사람의 정면 이미지처럼 변환하게 된다. dlib 패키지를 통해 얼굴이미지에서 사람의 얼굴 특징점을 파악하고 이 얼굴 특징점들이 사람이 정면을 보고 있는 이미지와 특징점들의 위치가 비슷해지도록 이미지 회전 및 이미지 확대, 축소를 통해 정면 얼굴이미지를 수집한다.
+    \begin{figure}[h!] %사진X
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{생성된 정면얼굴이미지}
+    \end{figure}
 
 
 
-
-GAN 모델의 학습은 80000 iteration 진행하였다. 학습완료 후 생성된 신경망 모델을 이용하여 소스 동영상을 60FPS로 추출한 이미지들에서 얼굴 변형을 진행하고 완료시 얼굴이 변형된 결과 이미지들이 생성된다.
-
-위 과정이 완료되면 얼굴이 변형된 영상을 추출하기 위해 결과 이미지들을 python의 opencv 패키지를 재합성한다. 결과 이미지를 재합성 소스 영상에서 얼굴 부분만 변형된 새로운 영상을 추출할 수 있다.
-
-\section{ GAN을 활용한 얼굴 변형 모델의 테스트 환경 및 결과}
-
-테스트 환경 :
-
-OS : windows 10 / 64bit
-
-CPU : i7 - 7700
-
-GPU : 1060 6GB
-
-RAM : 16GB
-
-학습된 GAN 얼굴 변형 모델을 테스트한 결과는 다음과 같다.
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{구분자 신경망 구조 <출처:https://github.com/shaoanlu/faceswap-GAN>}
-\end{figure}
-
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\caption{원 이미지(좌), 얼굴 변형 된 이미지(우)}
-\end{figure}
+    정면 얼굴 이미지가 모두 생성이 되면 dlib 패키지를 이용하여 해당 이미지들을 통해 binary mask 이미지를 생성하고 정면 얼굴이미지와 binary mask 이미지가 GAN 모델의 학습에 이용된다. 학습에 사용되는 이미지의 크기는 64*64 pixels이다. 
+    \begin{figure}[h!]%사진X
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{binary mask 생성결과}
+    \end{figure}
 
 
-이 모델의 탐색을 통해, 얼굴이 좌우 90도 가까이 돌아가더라도 얼굴이 자연스럽게 변형되는 결과를 확인하였고, 일부 데이터에 장애물이 존재하더라도 어느 정도 보완하여 합성시켜준다는 점 또한 확인하였다. 하지만 이러한 결과를 얻기 위해선 충분한 데이터 셋의 수, 학습시간, 하드웨어의 성능이 필요할 것이다. 또한 얼굴 변형을 하는 소스 영상의 화질이 좋을수록 좋은 결과를 얻을 수 있었다. 하드웨어의 성능이 보장된다면 신경망 층의 크기를 늘린다면 더 세밀한 학습이 진행될 수 있을 것이며 학습 횟수 또한 모델의 성능에 있어서 중요한 요소가 될 수 있다.
+    \item GAN 얼굴변형 모델의 Network Architecture
 
-\chapter{ 위 네 가지 기술들과 서버의 연결 및 결과  }
+    GAN 얼굴변형 모델의 생성자와 구분자 신경망 구조는 다음과 같으며 생성자 신경망은 input 이미지의 통계적 분포를 판단하여 가짜이미지를 생성해 내며 구분자 신경망은 생성자가 만들어 낸 이미지가 가짜인지 실제 이미지인지 판단해 나가면서 두 신경망이 적대적으로 학습된다.
 
-\section{ 서버설명 + cox 페이지 설명}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{생성자 신경망 구조 \protect\footnote{https://github.com/shaoanlu/faceswap-GAN}}
+    \end{figure}
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\end{figure}
 
-\begin{figure}[h!]
-\centering
-%  \includegraphics[scale=0.5]{170920.png}}
-\end{figure}
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{구분자 신경망 구조 \protect\footnote{https://github.com/shaoanlu/faceswap-GAN}}
+    \end{figure}
 
+    GAN 모델의 학습은 80000 iteration 진행하였다. 학습완료 후 생성된 신경망 모델을 이용하여 소스 동영상을 60FPS로 추출한 이미지들에서 얼굴 변형을 진행하고 완료시 얼굴이 변형된 결과 이미지들이 생성된다.
+
+    위 과정이 완료되면 얼굴이 변형된 영상을 추출하기 위해 결과 이미지들을 python의 opencv 패키지를 재합성한다. 결과 이미지를 재합성 소스 영상에서 얼굴 부분만 변형된 새로운 영상을 추출할 수 있다.
+
+    \section{ GAN을 활용한 얼굴 변형 모델의 테스트 환경 및 결과}
+
+    \subsection{테스트 환경}
+    \spec
+    \subsection{결과}
+
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{구분자 신경망 구조 \protect\footnote{출처:https://github.com/shaoanlu/faceswap-GAN}}
+    \end{figure}
+
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \caption{원 이미지(좌), 얼굴 변형 된 이미지(우)}
+    \end{figure}
+
+
+    이 모델의 탐색을 통해, 얼굴이 좌우 90도 가까이 돌아가더라도 얼굴이 자연스럽게 변형되는 결과를 확인하였고, 일부 데이터에 장애물이 존재하더라도 어느 정도 보완하여 합성시켜준다는 점 또한 확인하였다. 하지만 이러한 결과를 얻기 위해선 충분한 데이터 셋의 수, 학습시간, 하드웨어의 성능이 필요할 것이다. 또한 얼굴 변형을 하는 소스 영상의 화질이 좋을수록 좋은 결과를 얻을 수 있었다. 하드웨어의 성능이 보장된다면 신경망 층의 크기를 늘린다면 더 세밀한 학습이 진행될 수 있을 것이며 학습 횟수 또한 모델의 성능에 있어서 중요한 요소가 될 수 있다.
+
+    \chapter{ 위 네 가지 기술들과 서버의 연결 및 결과  }
+
+    \section{ 서버설명 + cox 페이지 설명}
+
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \end{figure}
+
+    \begin{figure}[h!]
+    \centering
+    %  \includegraphics[scale=0.5]{170920.png}}
+    \end{figure}
+\end{enumerate}
 ｢기능 1｣
 
 -MAIN PAGE로 REDIRECTION을 하는 기능을 가진다. LOGO로써의 기능을 겸한다.
@@ -1055,22 +1030,22 @@ RAM : 16GB
 
 \section{ 2D-Faceswap 모델 실행 환경과 과정 및 결과}
 
-\subsection{요구사항 :  opencv 및 dlib 설치 필요}
+\textbf{요구사항 :  opencv 및 dlib 설치 필요}
 
 \subsection{인터프리터 (conda)환경}
 
 \begin{table}[h!]
 \centering
-    \begin{tabular}{|c|c|}
-        \hline\hline
-        dlib & 19.16.0 \\ \hline
-        numpy & 1.15.4 \\             \hline
-        opencv-python & 3.4.4.19\\             \hline
-        pygame & 1.9.4 \\            \hline
-        PyOpenGL & 3.1.0 \\            \hline
-        scipy  &  1.1.0\\
-        \hline\hline
-    \end{tabular}
+\begin{tabular}{|c|c|}
+    \hline\hline
+    dlib & 19.16.0 \\ \hline
+    numpy & 1.15.4 \\             \hline
+    opencv-python & 3.4.4.19\\             \hline
+    pygame & 1.9.4 \\            \hline
+    PyOpenGL & 3.1.0 \\            \hline
+    scipy  &  1.1.0\\
+    \hline\hline
+\end{tabular}
 \caption{2D-Faceswap의 인터프리터 세팅  }
 \end{table}
 
@@ -1080,10 +1055,10 @@ RAM : 16GB
 
 웹에 접속하여 2D-Faceswap 알고리즘을 적용하는 과정은 다음과 같다. 
 \begin{enumerate}
-\item  사용자는 먼저 정면 동영상 A 와 합성하고 싶은 사진 B를 준비한다.
-\item 웹 상에 얼굴 정면이 들어가 있는 동영상 A와 사진 B를 업로드한다.
-\item 서버에서 2D-Faceswap 알고리즘을 동영상에 적용시킨다. (2D-Faceswap 알고리즘의 적용과정은 제2장에 있다.)
-\item 2D-Faceswap 알고리즘이 적용된 동영상을 웹 상에 표시한다.
+    \item  사용자는 먼저 정면 동영상 A 와 합성하고 싶은 사진 B를 준비한다.
+    \item 웹 상에 얼굴 정면이 들어가 있는 동영상 A와 사진 B를 업로드한다.
+    \item 서버에서 2D-Faceswap 알고리즘을 동영상에 적용시킨다. (2D-Faceswap 알고리즘의 적용과정은 제2장에 있다.)
+    \item 2D-Faceswap 알고리즘이 적용된 동영상을 웹 상에 표시한다.
 \end{enumerate}
 
 이때 2D-Faceswap 알고리즘은 영상에 여러 명의 사람이 등장할 경우 전체 사람의 얼굴을 변화시킨다는 단점이 있다. 따라서 우리는 2D-Faceswap 모델과 Openpose를 이용하여 여러 사람 중 한사람의 얼굴만을 합성시켜야 한다.
@@ -1092,26 +1067,26 @@ RAM : 16GB
 
 \section{ Openpose 를 활용한 Faceswap 모델 실행 환경과 과정 및 결과}
 
-\subsection{요구사항 :  dlib 및 opencv 필요}
+\textbf{요구사항 :  dlib 및 opencv 필요}
 
 \subsection{인터프리터 (conda)환경}
 
 \begin{table}[h!]
 \centering
-    \begin{tabular}{|c|c|}
-        \hline\hline
-        face-recognition & 1.2.3\\ \hline
-        face-recognition-models & 0.3.0 \\ \hline
-        ffmpeg & 1.4 \\ \hline
-        ffmpy & 0.2.2 \\ \hline
-        dlib & 19.16.0 \\ \hline
-        numpy & 1.15.4 \\ \hline
-        opencv-python & 3.4.4.19\\ \hline
-        pygame & 1.9.4 \\ \hline
-        PyOpenGL & 3.1.0 \\ \hline
-        scipy &1.1.0\\ \hline
-        \hline\hline
-    \end{tabular}
+\begin{tabular}{|c|c|}
+    \hline\hline
+    face-recognition & 1.2.3\\ \hline
+    face-recognition-models & 0.3.0 \\ \hline
+    ffmpeg & 1.4 \\ \hline
+    ffmpy & 0.2.2 \\ \hline
+    dlib & 19.16.0 \\ \hline
+    numpy & 1.15.4 \\ \hline
+    opencv-python & 3.4.4.19\\ \hline
+    pygame & 1.9.4 \\ \hline
+    PyOpenGL & 3.1.0 \\ \hline
+    scipy &1.1.0\\ \hline
+    \hline\hline
+\end{tabular}
 \caption{Openpose의 인터프리터 셋팅 }
 \end{table}
 
@@ -1120,62 +1095,62 @@ RAM : 16GB
 웹에 접속하여 Openpose를 활용한 Faceswap 모델 적용하는 방법은 다음과 같다.
 
 \begin{enumerate}
-\item 사용자는 먼저 바꾸고 싶은 얼굴과 합성하고 싶은 얼굴을 업로드한다.
-\item 합성하고자하는 동영상을 선택한다.
-\item 합성하고자 하는 동영상에서 사용자가 올린 사진과 비교하여 바꾸고 싶은 얼굴을 감지한다.
-\item 얼굴을 감지 한 후 2절에서 사용한 2D-Faceswap을 이용하여 얼굴을 합성한다.
-\item 합성한 결과를 웹 상에 표시한다.
+    \item 사용자는 먼저 바꾸고 싶은 얼굴과 합성하고 싶은 얼굴을 업로드한다.
+    \item 합성하고자하는 동영상을 선택한다.
+    \item 합성하고자 하는 동영상에서 사용자가 올린 사진과 비교하여 바꾸고 싶은 얼굴을 감지한다.
+    \item 얼굴을 감지 한 후 2절에서 사용한 2D-Faceswap을 이용하여 얼굴을 합성한다.
+    \item 합성한 결과를 웹 상에 표시한다.
 \end{enumerate}
 
 \section{딥페이크(Original-High-Resolution Model) 모델 실행 환경과 과정 및 결과}
 
-\subsection{요구사항 : Nvidia GPU 사용 시 CUDA 세팅}
+\textbf{요구사항 : Nvidia GPU 사용 시 CUDA 세팅}
 
 
 \subsection{인터프리터 (conda)환경 -Nvidia GPU사용 CUDA 세팅}
 
 \begin{table}[h!]
 \centering
-    \begin{tabular}{|c|c|}
-        \hline\hline
-        Click & 7.0 \\ \hline
-        cloudpickle & 0.6.1 \\ \hline
-        cmake & 3.13.1 \\ \hline
-        cycler& 0.10.0 \\ \hline
-        dask & 1.0.0 \\ \hline
-        decorator & 4.3.0 \\ \hline
-        dlib & 19.16.0 \\ \hline
-        face-recognition &  1.2.3 \\ \hline
-        face-recognition-models & 0.3.0 \\ \hline
-        ffmpy & 0.2.2 \\ \hline
-        h5py & 2.8.0 \\ \hline
-        Keras & 2.2.4 \\ \hline
-        Keras-Applications & 1. 0.6 \\ \hline
-        Keras-Preprocessing & 1.0.5 \\ \hline
-        kiwisolver & 1.0.1 \\ \hline
-        matplotlib & 2.2.2 \\ \hline
-        networkx &  2.2 \\ \hline
-        numpy & 1.15.4 \\ \hline
-        nvidia-ml-py3 & 7.352.0 \\ \hline
-        opencv-python & 3.4.4.19 \\ \hline
-        pathlib & 1.0.1 \\ \hline
-        Pillow & 5.3.0 \\ \hline
-        psutil & 5.4.8 \\ \hline
-        pyparsing & 2.3.0 \\ \hline
-        python-dateutil & 2.7.5 \\ \hline
-        pytz & 2018.7 \\ \hline
-        PyWavelets &  1.0.1 \\ \hline
-        PyYAML &  3.13 \\ \hline
-        scandir & 1.7 \\ \hline
-        scikit-image & 0.14.1 \\ \hline
-        scikit-learn & 0.20.1 \\ \hline
-        scipy & 1.1.0 \\ \hline
-        six & 1.12.0 \\ \hline
-        toolz  & 0.9.0 \\ \hline
-        tqdm & 4.28.1 \\ \hline
-        \hline\hline
-    \end{tabular}
-\caption{Openpose의 인터프리터 셋팅 }
+\begin{tabular}{|c|c|}
+    \hline\hline
+    Click & 7.0 \\ \hline
+    cloudpickle & 0.6.1 \\ \hline
+    cmake & 3.13.1 \\ \hline
+    cycler& 0.10.0 \\ \hline
+    dask & 1.0.0 \\ \hline
+    decorator & 4.3.0 \\ \hline
+    dlib & 19.16.0 \\ \hline
+    face-recognition &  1.2.3 \\ \hline
+    face-recognition-models & 0.3.0 \\ \hline
+    ffmpy & 0.2.2 \\ \hline
+    h5py & 2.8.0 \\ \hline
+    Keras & 2.2.4 \\ \hline
+    Keras-Applications & 1. 0.6 \\ \hline
+    Keras-Preprocessing & 1.0.5 \\ \hline
+    kiwisolver & 1.0.1 \\ \hline
+    matplotlib & 2.2.2 \\ \hline
+    networkx &  2.2 \\ \hline
+    numpy & 1.15.4 \\ \hline
+    nvidia-ml-py3 & 7.352.0 \\ \hline
+    opencv-python & 3.4.4.19 \\ \hline
+    pathlib & 1.0.1 \\ \hline
+    Pillow & 5.3.0 \\ \hline
+    psutil & 5.4.8 \\ \hline
+    pyparsing & 2.3.0 \\ \hline
+    python-dateutil & 2.7.5 \\ \hline
+    pytz & 2018.7 \\ \hline
+    PyWavelets &  1.0.1 \\ \hline
+    PyYAML &  3.13 \\ \hline
+    scandir & 1.7 \\ \hline
+    scikit-image & 0.14.1 \\ \hline
+    scikit-learn & 0.20.1 \\ \hline
+    scipy & 1.1.0 \\ \hline
+    six & 1.12.0 \\ \hline
+    toolz  & 0.9.0 \\ \hline
+    tqdm & 4.28.1 \\ \hline
+    \hline\hline
+\end{tabular}
+\caption{딥페이크의 인터프리터 셋팅 }
 \end{table}
 
 \subsection{실행과정}
@@ -1192,9 +1167,9 @@ Faceswap을 위해서 사용한 4가지 알고리즘 중 deepfake 알고리즘�
 세부 작동방식 :
 
 \begin{enumerate}
-\item  동영상 A를 사진으로 잘게 자른다. 
-\item  모델을 사용해서 각 사진의 A의 얼굴을 B로 바꾼다. 
-\item  사진을 다시 동영상으로 합친 후 웹에서 실행하고 폴더에 저장한다
+    \item  동영상 A를 사진으로 잘게 자른다. 
+    \item  모델을 사용해서 각 사진의 A의 얼굴을 B로 바꾼다. 
+    \item  사진을 다시 동영상으로 합친 후 웹에서 실행하고 폴더에 저장한다
 \end{enumerate}
 
 \section{생성적 적대 신경망(GAN) 모델 실행 환경과 과정 및 결과}
@@ -1208,28 +1183,28 @@ Faceswap을 위해서 사용한 4가지 알고리즘 중 deepfake 알고리즘�
 
 \begin{table}[h!]
 \centering
-    \begin{tabular}{|c|c|}
-        \hline\hline
-        dlib & 19.15.0 \\ \hline
-        face-alignment & 1.0.0  \\ \hline
-        face-recognition & 1.2.3  \\ \hline
-        face-recognition-models & 0.3.0  \\ \hline
-        Keras & 2.1.5  \\ \hline
-        Keras-Applications & 1.0.6  \\ \hline
-        Keras-Preprocessing & 1.0.5  \\ \hline
-        keras-vggface  & 0.5  \\ \hline
-        matplotlib & 2.2.2  \\ \hline
-        moviepy & 0.2.3.5  \\ \hline
-        nvidia-ml-py &  375.53.1  \\ \hline
-        nvidia-ml-py3 &  7.352.0  \\ \hline
-        opencv-python & 3.4.1.15  \\ \hline
-        pathlib & 1.0.1 \\ \hline 
-        prefetch-generator &  1.0.1  \\ \hline
-        pygame & 1.9.4  \\ \hline
-        tensorflow-gpu &  1.12.0  \\ \hline
-        torch & 0.4.1  \\ \hline
-        \hline\hline
-    \end{tabular}
+\begin{tabular}{|c|c|}
+    \hline\hline
+    dlib & 19.15.0 \\ \hline
+    face-alignment & 1.0.0  \\ \hline
+    face-recognition & 1.2.3  \\ \hline
+    face-recognition-models & 0.3.0  \\ \hline
+    Keras & 2.1.5  \\ \hline
+    Keras-Applications & 1.0.6  \\ \hline
+    Keras-Preprocessing & 1.0.5  \\ \hline
+    keras-vggface  & 0.5  \\ \hline
+    matplotlib & 2.2.2  \\ \hline
+    moviepy & 0.2.3.5  \\ \hline
+    nvidia-ml-py &  375.53.1  \\ \hline
+    nvidia-ml-py3 &  7.352.0  \\ \hline
+    opencv-python & 3.4.1.15  \\ \hline
+    pathlib & 1.0.1 \\ \hline 
+    prefetch-generator &  1.0.1  \\ \hline
+    pygame & 1.9.4  \\ \hline
+    tensorflow-gpu &  1.12.0  \\ \hline
+    torch & 0.4.1  \\ \hline
+    \hline\hline
+\end{tabular}
 \caption{GAN의 인터프리터 셋팅 }
 \end{table}
 
@@ -1244,8 +1219,8 @@ Faceswap을 위해서 사용한 4가지 알고리즘 중 deepfake 알고리즘�
     \item 핵심 모듈 구성
 
     앞서 5절에서 설명한 3가지 과정과 비디오를 변환하는 모듈을 작성하였다.
-
     -MTCNN face detection
+
 
     -prep binary masks
 
@@ -1419,8 +1394,6 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
     %  \includegraphics[scale=0.5]{170920.png}}
     \caption{web 화면 – product}
     \end{figure} 
-        
-
 
 \end{enumerate}
 
@@ -1459,131 +1432,123 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
 \section{ COX Cinema로 만든 영상 예시의 실행환경 및 결과 }
 
-\subsection{ 실행 테스트 환경 }
-
-OS : windows 10 / 64bit
-
-CPU : i7 - 7700
-
-GPU : 1060 6GB
-
-RAM : 16GB
-
+\subsection{테스트 환경 }
+\spec
 모바일 기기의 경우 Android 기기를 이용하여야한다.
 
 \subsection{ 구성 및 제작 결과}
 
 \begin{enumerate}
 
-    \item 구성도
+\item 구성도
 
-    \begin{figure}[h!]
-    \centering
-    %  \includegraphics[scale=0.5]{170920.png}}
-    \caption{web 화면 – Vote}
-    \end{figure} 
+\begin{figure}[h!]
+\centering
+%  \includegraphics[scale=0.5]{170920.png}}
+\caption{web 화면 – Vote}
+\end{figure} 
 
-    \item 스토리 구성
+\item 스토리 구성
 
-        \begin{enumerate}%[label={\pgana*.}]
+    \begin{enumerate}%[label={\pgana*.}]
 
-            \item 주제 : 배고픈 식사시간에 어떤 음식을 먹을 것인지에 대한 주제로 이야기가 전개된다.  
-            \item 등장인물 : 여자주인공, 남자주인공1, 남자주인공2, 그 외 다수
-            \item 원 영상 출처 : tvN 드라마 ‘식샤를 합시다1,2’ 
+        \item 주제 : 배고픈 식사시간에 어떤 음식을 먹을 것인지에 대한 주제로 이야기가 전개된다.  
+        \item 등장인물 : 여자주인공, 남자주인공1, 남자주인공2, 그 외 다수
+        \item 원 영상 출처 : tvN 드라마 ‘식샤를 합시다1,2’ 
 
-            \item 줄거리 : 여자 주인공이 운동을 하다가 휴대폰을 보게 되고 “배고프다~밥먹으러가자!“ 라는 메시지를 받으면서 이야기가 시작된다. 메시지를 받은 사용자의 모바일기기에 3가지 메뉴 중 먹고 싶은 메뉴를 고를 수 있는 선택권이 주어지게 되고 주인공은 치킨, 탕수육, 휴게소 음식(알 감자) 중 원하는 음식을 고르게 된다. 첫 번째로 치킨을 고르게 될 경우 치킨을 먹게 된다. 여자 주인공과 남자주인공1이 치킨을 나눠먹는 사이, 다른 한명의 남자주인공이 뒤늦게 치킨 무를 받아오며 늦게 합류해 함께 치킨을 먹는 모습이 보여 진다. 
+        \item 줄거리 : 여자 주인공이 운동을 하다가 휴대폰을 보게 되고 “배고프다~밥먹으러가자!“ 라는 메시지를 받으면서 이야기가 시작된다. 메시지를 받은 사용자의 모바일기기에 3가지 메뉴 중 먹고 싶은 메뉴를 고를 수 있는 선택권이 주어지게 되고 주인공은 치킨, 탕수육, 휴게소 음식(알 감자) 중 원하는 음식을 고르게 된다. 첫 번째로 치킨을 고르게 될 경우 치킨을 먹게 된다. 여자 주인공과 남자주인공1이 치킨을 나눠먹는 사이, 다른 한명의 남자주인공이 뒤늦게 치킨 무를 받아오며 늦게 합류해 함께 치킨을 먹는 모습이 보여 진다. 
 
-        두 번째로는 탕수육이다. 여자주인공과 남자주인공이 사람들과 탕수육을 먹으러 중국집에 가게 된다. 주문한 음식들이 나와져있고 그중 탕수육을 먹게 되는데, 남자주인공이 탕수육 고기에 소스를 부으려는 순간 여자주인공이 크게 반발하며 다투다가 사용자의 모바일기기에 소스를 부어먹을 것인지, 소스에 찍어먹을 것인지 결정하는 투표기능이 주어지게 된다. 이후 하나는 소스를 탕수육에 맛있게 부어먹는 줄거리가 진행이 되고 하나는 소스에 맛있게 찍어먹는 줄거리가 펼쳐진다. 
+    두 번째로는 탕수육이다. 여자주인공과 남자주인공이 사람들과 탕수육을 먹으러 중국집에 가게 된다. 주문한 음식들이 나와져있고 그중 탕수육을 먹게 되는데, 남자주인공이 탕수육 고기에 소스를 부으려는 순간 여자주인공이 크게 반발하며 다투다가 사용자의 모바일기기에 소스를 부어먹을 것인지, 소스에 찍어먹을 것인지 결정하는 투표기능이 주어지게 된다. 이후 하나는 소스를 탕수육에 맛있게 부어먹는 줄거리가 진행이 되고 하나는 소스에 맛있게 찍어먹는 줄거리가 펼쳐진다. 
 
-        마지막으로는 휴게소 음식이다. 여자주인공이 휴게소음식(알 감자)를 받아와서 먹으려는 중 전화가 오게 되고 전화통화가 끝난 여자 주인공은 다시 알 감자를 먹으려고 하는 찰나, 사용자의 모바일 기기에 흔들어달라는 기능이 나타나게 된다. 사용자가 흔드는 행동을 취하게 되면 여자 주인공이 실수로 알 감자를 팔로 쳐 떨어트리게 되고 속상해하던 여자 주인공은 아까워하며 몰래 알 감자를 주워 먹다가 지나가는 아이에 의해 놀림을 받고 끝나게 된다.
+    마지막으로는 휴게소 음식이다. 여자주인공이 휴게소음식(알 감자)를 받아와서 먹으려는 중 전화가 오게 되고 전화통화가 끝난 여자 주인공은 다시 알 감자를 먹으려고 하는 찰나, 사용자의 모바일 기기에 흔들어달라는 기능이 나타나게 된다. 사용자가 흔드는 행동을 취하게 되면 여자 주인공이 실수로 알 감자를 팔로 쳐 떨어트리게 되고 속상해하던 여자 주인공은 아까워하며 몰래 알 감자를 주워 먹다가 지나가는 아이에 의해 놀림을 받고 끝나게 된다.
 
-            \item 목적 : 요즈음 대중매체로의 정보전달이 활발하고 참여율이 높은 만큼 일명 ‘먹방’ (먹는 방송)이 확대되고 있다. 단순히 먹는 것이 생존 및 영양소 섭취의 의미가 아니라 삶에서 큰 비율을 차지하며 행복의 수단으로서의 역할이 대두되고 있다. 이처럼 내가 원하는 음식을 원하는 방법으로 먹는 것을 볼 수 있다는 편리함을 주고, 단순히 편리함에서 그치는 것이 아니라 드라마 형식의 먹는 방송을 구현해낼 수 있다는 큰 장점을 가진다. 그 과정에서 거부감 없이 광고효과가 이뤄지고 또 그러한 사용자의 심리에 부응해 주문까지도 간편하게 가능할 수 있게 해 주는 다기능을 사용한 최초의 멀티 인터렉티브 무비이다.  
-        \end{enumerate}
+        \item 목적 : 요즈음 대중매체로의 정보전달이 활발하고 참여율이 높은 만큼 일명 ‘먹방’ (먹는 방송)이 확대되고 있다. 단순히 먹는 것이 생존 및 영양소 섭취의 의미가 아니라 삶에서 큰 비율을 차지하며 행복의 수단으로서의 역할이 대두되고 있다. 이처럼 내가 원하는 음식을 원하는 방법으로 먹는 것을 볼 수 있다는 편리함을 주고, 단순히 편리함에서 그치는 것이 아니라 드라마 형식의 먹는 방송을 구현해낼 수 있다는 큰 장점을 가진다. 그 과정에서 거부감 없이 광고효과가 이뤄지고 또 그러한 사용자의 심리에 부응해 주문까지도 간편하게 가능할 수 있게 해 주는 다기능을 사용한 최초의 멀티 인터렉티브 무비이다.  
+    \end{enumerate}
 
-    \item 기능 구성
+\item 기능 구성
 
-        \begin{enumerate}%[label={\pgana*.}]
-            \item BRANCH 기능
+    \begin{enumerate}%[label={\pgana*.}]
+        \item BRANCH 기능
 
-            \begin{figure}[h!]
-                \centering
-            %  \includegraphics[scale=0.5]{170920.png}}
-                \caption{web 화면 – Vote}
-            \end{figure} 
+        \begin{figure}[h!]
+            \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+            \caption{web 화면 – Vote}
+        \end{figure} 
 
-            \begin{figure}[h!]
-                \centering
-            %  \includegraphics[scale=0.5]{170920.png}}
-                \caption{web 화면 – Vote}
-            \end{figure} 
+        \begin{figure}[h!]
+            \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+            \caption{web 화면 – Vote}
+        \end{figure} 
 
-            여자주인공이 배가 고프니, 밥을 먹으러 가자는 메시지를 받고나서 어떤 음식을 먹을지 선택을 하도록 하기 위하여 사용한 Branch 기능이다. 이제 COX 애플리케이션을 사용하는 모바일 기기 사용자는 이 기능으로 하여금 어떻게 이야기를 전개할 것인지 선택을 할 수 있게 된다. 
+        여자주인공이 배가 고프니, 밥을 먹으러 가자는 메시지를 받고나서 어떤 음식을 먹을지 선택을 하도록 하기 위하여 사용한 Branch 기능이다. 이제 COX 애플리케이션을 사용하는 모바일 기기 사용자는 이 기능으로 하여금 어떻게 이야기를 전개할 것인지 선택을 할 수 있게 된다. 
 
-            \item PUSH (메세지 기능 )
+        \item PUSH (메세지 기능 )
 
-            \begin{figure}[h!]
-                \centering
-            %  \includegraphics[scale=0.5]{170920.png}}
-                \caption{web 화면 – Vote}
-            \end{figure} 
+        \begin{figure}[h!]
+            \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+            \caption{web 화면 – Vote}
+        \end{figure} 
 
-        이 기능은 앞서 ‘가.’ 에서 언급되었던 메시지이다. 여자 주인공이 운동을 하다가 휴대폰에 온 이 메시지를 보고서 어떤 메뉴를 먹을 것인지 선택하게 된다. 모바일 애플리케이션 사용자는 기기로 이 메시지를 받게 된다.
+    이 기능은 앞서 ‘가.’ 에서 언급되었던 메시지이다. 여자 주인공이 운동을 하다가 휴대폰에 온 이 메시지를 보고서 어떤 메뉴를 먹을 것인지 선택하게 된다. 모바일 애플리케이션 사용자는 기기로 이 메시지를 받게 된다.
 
-            \item PUSH LINK 기능
-            
-            \begin{figure}[h!]
-                \centering
-            %  \includegraphics[scale=0.5]{170920.png}}
-                \caption{web 화면 – Vote}
-            \end{figure} 
+        \item PUSH LINK 기능
+        
+        \begin{figure}[h!]
+            \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+            \caption{web 화면 – Vote}
+        \end{figure} 
 
-        치킨 메뉴에서 여자주인공과 남자주인공들이 치킨을 먹는 중에 모바일 기기 사용자로 하여금 극중 여자 주인공이 치킨을 먹으면서 입고 있는 옷의 정보를 이 기능으로 제공해줄 수 있다. 위의 사진에서 YES 버튼을 누르게 되면 옷의 정보가 담긴 인터넷 URL로 자동으로 접속이 되며 인터넷 창이 뜨게 된다.
+    치킨 메뉴에서 여자주인공과 남자주인공들이 치킨을 먹는 중에 모바일 기기 사용자로 하여금 극중 여자 주인공이 치킨을 먹으면서 입고 있는 옷의 정보를 이 기능으로 제공해줄 수 있다. 위의 사진에서 YES 버튼을 누르게 되면 옷의 정보가 담긴 인터넷 URL로 자동으로 접속이 되며 인터넷 창이 뜨게 된다.
 
-            \item VOTE 기능
+        \item VOTE 기능
 
-            \begin{figure}[h!]
-                \centering
-            %  \includegraphics[scale=0.5]{170920.png}}
-                \caption{web 화면 – Vote}
-            \end{figure} 
+        \begin{figure}[h!]
+            \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+            \caption{web 화면 – Vote}
+        \end{figure} 
 
-            \begin{figure}[h!]
-                \centering
-            %  \includegraphics[scale=0.5]{170920.png}}
-                \caption{web 화면 – Vote}
-            \end{figure} 
+        \begin{figure}[h!]
+            \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+            \caption{web 화면 – Vote}
+        \end{figure} 
 
-        탕수육을 먹는 에피소드에서 탕수육을 어떻게 먹을 것 인지 투표를 하는 기능으로 쓰였다. 약 10초정도의 시간이 주어지고 모바일기기 사용자는 시간 안에 투표를 하면 된다. 이 투표결과를 바탕으로 자연스럽게 BRANCH의 기능 역시 가질 수 있다. 갈래를 자동으로 구분해주어 별도로 BRANCH 선택을 하지 않아줘도 되어 편리하다. 
+    탕수육을 먹는 에피소드에서 탕수육을 어떻게 먹을 것 인지 투표를 하는 기능으로 쓰였다. 약 10초정도의 시간이 주어지고 모바일기기 사용자는 시간 안에 투표를 하면 된다. 이 투표결과를 바탕으로 자연스럽게 BRANCH의 기능 역시 가질 수 있다. 갈래를 자동으로 구분해주어 별도로 BRANCH 선택을 하지 않아줘도 되어 편리하다. 
 
-            \item MOTION 기능
+        \item MOTION 기능
 
-            \begin{figure}[h!]
-                \centering
-            %  \includegraphics[scale=0.5]{170920.png}}
-                \caption{web 화면 – Vote}
-            \end{figure} 
+        \begin{figure}[h!]
+            \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+            \caption{web 화면 – Vote}
+        \end{figure} 
 
-            \begin{figure}[h!]
-                \centering
-            %  \includegraphics[scale=0.5]{170920.png}}
-                \caption{web 화면 – Vote}
-            \end{figure} 
+        \begin{figure}[h!]
+            \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+            \caption{web 화면 – Vote}
+        \end{figure} 
 
 
-        휴게소 음식 (알 감자) 줄거리 부분에서 여자주인공이 전화를 끝낸 직후 위와 같이 화면상에 “흔들어주세요!“
+    휴게소 음식 (알 감자) 줄거리 부분에서 여자주인공이 전화를 끝낸 직후 위와 같이 화면상에 “흔들어주세요!“
 
-        라는 문구가 뜨게 된다. 모바일 사용자는 해당 문구를 본 후에, 자신의 모바일 기기를 흔들게 된다. 흔들면 감자가 쏟아지는 줄거리가 전개될 때 이와 같은 기능을 사용하였다.
+    라는 문구가 뜨게 된다. 모바일 사용자는 해당 문구를 본 후에, 자신의 모바일 기기를 흔들게 된다. 흔들면 감자가 쏟아지는 줄거리가 전개될 때 이와 같은 기능을 사용하였다.
 
-            \item PRODUCT 기능
-            
-            \begin{figure}[h!]
-                \centering
-            %  \includegraphics[scale=0.5]{170920.png}}
-                \caption{web 화면 – Vote}
-            \end{figure} 
+        \item PRODUCT 기능
+        
+        \begin{figure}[h!]
+            \centering
+        %  \includegraphics[scale=0.5]{170920.png}}
+            \caption{web 화면 – Vote}
+        \end{figure} 
 
-        마지막으로 이 기능은 치킨 메뉴의 줄거리가 전개될 때에 사용자가 치킨이 먹고 싶어지겠다는 생각이 들 때 즈음, 곧바로 주문을 할 수 있게 끔 해주는 기능이다. 어떤 영상을 보고 있을 때 내가 보는 영상에서 사고 싶은 혹은 먹고 싶은 것을 손쉽게 구매할 수 있게 하는 기능은 어떤 기능보다도 광고효과를 비롯해 구매 욕구를 불러일으킬 수 있다. 사용자(소비자) 입장에서도 손쉽게 구매를 할 수 있다는 점에서 효율적이고 편리한 기능이라고 할 수 있다.
-        \end{enumerate}
+    마지막으로 이 기능은 치킨 메뉴의 줄거리가 전개될 때에 사용자가 치킨이 먹고 싶어지겠다는 생각이 들 때 즈음, 곧바로 주문을 할 수 있게 끔 해주는 기능이다. 어떤 영상을 보고 있을 때 내가 보는 영상에서 사고 싶은 혹은 먹고 싶은 것을 손쉽게 구매할 수 있게 하는 기능은 어떤 기능보다도 광고효과를 비롯해 구매 욕구를 불러일으킬 수 있다. 사용자(소비자) 입장에서도 손쉽게 구매를 할 수 있다는 점에서 효율적이고 편리한 기능이라고 할 수 있다.
+    \end{enumerate}
 \end{enumerate}
 
 참고문헌
