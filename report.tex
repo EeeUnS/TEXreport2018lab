@@ -1,38 +1,39 @@
+documentclass{oblivoir}
+        
+    \usepackage{graphicx}%그림을 업로드하기위한 패키지
 
-\documentclass{oblivoir}
+    %\usepackage{ikps} %일격필살에서 배포한 패키지
+    \usepackage{tabu}
+
+    \usepackage{multirow} 
+
+    \usepackage{enumitem}
+    %\usepackage[table,dvipsnames]{xcolor}  %table 색을 쓰기위한 패키지
+    \usepackage{dhucs-enumitem} %kotex enumerate 가. 를 쓰기위한 패키지
+
+    \usepackage{syntonly}
+    %\syntaxonly
+    %\usepackage{urlbst}
+    %%%%%%%% for itemize in tabu :  https://tex.stackexchange.com/questions/381625/lists-in-tabu-environment
+    \usepackage{etoolbox}
+    \usepackage{url}
+    \AtBeginEnvironment{tabu}{\setlist[itemize]{wide = 0pt, leftmargin = *}}
+%참고문헌 관련 : http://cfs5.tistory.com/upload_control/download.blog?fhandle=YmxvZzQ5OTI4QGZzNS50aXN0b3J5LmNvbTovYXR0YWNoLzAvMTIwMDAwMDAwMDAwLnBkZg%3D%3D
+% http://wiki.ktug.org/wiki/wiki.php/%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C
+% http://www.ptep-online.com/ctan/lshort_korean.pdf
     
-\usepackage{graphicx}%그림을 업로드하기위한 패키지
-
-
-%\usepackage{ikps} %일격필살에서 배포한 패키지
-\usepackage{tabu}
-
-\usepackage{multirow} 
-
-\usepackage{enumitem}
-%\usepackage[table,dvipsnames]{xcolor}  %table 색을 쓰기위한 패키지
-\usepackage{dhucs-enumitem} %kotex enumerate 가. 를 쓰기위한 패키지
-
-\usepackage{syntonly}
-%\syntaxonly
-%\usepackage{urlbst}
-%%%%%%%% for itemize in tabu :  https://tex.stackexchange.com/questions/381625/lists-in-tabu-environment
-\usepackage{etoolbox}
-\usepackage{url}
-\AtBeginEnvironment{tabu}{\setlist[itemize]{wide = 0pt, leftmargin = *}}
-
 \makeatletter
-\newcommand*{\compress}{\@minipagetrue}
-\newcommand{\spec}{
-\begin{itemize}
-    \item OS : windows 10 / 64bit
-    \item CPU : gtx 1060 6GB
-    \item GPU : i7 - 7700
-    \item RAM : 16GB
-\end{itemize}
-}
-\makeatother
-
+    \newcommand*{\compress}{\@minipagetrue}
+    \newcommand{\spec}{
+    \begin{itemize}
+        \item OS : windows 10 / 64bit
+        \item CPU : gtx 1060 6GB
+        \item GPU : i7 - 7700
+        \item RAM : 16GB
+    \end{itemize}
+    }
+    \makeatother
+%더해야할것 그래픽스,타부, 타이틀 
 
 \begin{document}
 
@@ -1551,32 +1552,46 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
     \end{enumerate}
 \end{enumerate}
 
-참고문헌
+\begin{thebibliography}{}
+    \bibitem{인용1.}
+    Sun, X., Wu, P., \& Hoi, S. C. (2018). Face detection using deep learning: An improved faster RCNN approach. Neurocomputing, 299, 42-50.
+        
+    \bibitem{인용2.} 
+    Gosavi, V. R., Sable, G. S., \& Deshmane, A. K. (2018). Evaluation of Feature Extraction Techniques using Neural Network as a Classifier: A Comparative Review for face Recognition.
 
-[1] Sun, X., Wu, P., \& Hoi, S. C. (2018). Face detection using deep learning: An improved faster RCNN approach. Neurocomputing, 299, 42-50.
+    \bibitem{인용3.} 
+    Zhang, X., Sun, Y., \& He, W. (2018, August). Face Alignment Based on Two-Stage Localization. In Journal of Physics: Conference Series (Vol. 1069, No. 1, p. 012164). IOP Publishing.
 
-[2] Gosavi, V. R., Sable, G. S., \& Deshmane, A. K. (2018). Evaluation of Feature Extraction Techniques using Neural Network as a Classifier: A Comparative Review for face Recognition.
+    \bibitem{인용4.} 
+    Nirkin, Y., Masi, I., Tuan, A. T., Hassner, T., \& Medioni, G. (2018, May). On face segmentation, face swapping, and face perception. In Automatic Face \& Gesture Recognition (FG 2018), 2018 13th IEEE International Conference on (pp. 98-105). IEEE.
 
-[3] Zhang, X., Sun, Y., \& He, W. (2018, August). Face Alignment Based on Two-Stage Localization. In Journal of Physics: Conference Series (Vol. 1069, No. 1, p. 012164). IOP Publishing.
+    \bibitem{인용5.}
+    Dong, H., Neekhara, P., Wu, C., \& Guo, Y. (2017). Unsupervised image-to-image translation with generative adversarial networks. arXiv preprint arXiv:1701.02676.
 
-[4] Nirkin, Y., Masi, I., Tuan, A. T., Hassner, T., \& Medioni, G. (2018, May). On face segmentation, face swapping, and face perception. In Automatic Face \& Gesture Recognition (FG 2018), 2018 13th IEEE International Conference on (pp. 98-105). IEEE.
+    \bibitem{인용6.} 
+    Wang, M., \& Deng, W. (2018). Deep Face Recognition: A Survey. arXiv preprint arXiv:1804.06655.
 
-[5] Dong, H., Neekhara, P., Wu, C., \& Guo, Y. (2017). Unsupervised image-to-image translation with generative adversarial networks. arXiv preprint arXiv:1701.02676.
+    \bibitem{인용7.} 
+    Kazemi, V., \& Sullivan, J. (2014). One millisecond face alignment with an ensemble of regression trees. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 1867-1874).
 
-[6] Wang, M., \& Deng, W. (2018). Deep Face Recognition: A Survey. arXiv preprint arXiv:1804.06655.
+    \bibitem{인용8.}
+    Blanz, V., \& Vetter, T. (1999, July). A morphable model for the synthesis of 3D faces. In Proceedings of the 26th annual conference on Computer graphics and interactive techniques (pp. 187-194). ACM Press/Addison-Wesley Publishing Co..
 
-[7] Kazemi, V., \& Sullivan, J. (2014). One millisecond face alignment with an ensemble of regression trees. In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (pp. 1867-1874).
+    \bibitem{인용9.} 
+    \url{https://github.com/MarekKowalski/FaceSwap}
 
-[8] Blanz, V., \& Vetter, T. (1999, July). A morphable model for the synthesis of 3D faces. In Proceedings of the 26th annual conference on Computer graphics and interactive techniques (pp. 187-194). ACM Press/Addison-Wesley Publishing Co..
+    \bibitem{인용10.} 
+    \url{https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation}
 
-[9] https://github.com/MarekKowalski/FaceSwap
+    \bibitem{인용11.} 
+    \url{https://github.com/deepfakes/faceswap}
 
-[10] \protect{https://github.com/ZheC/Realtime_Multi-Person_Pose_Estimation}
+    \bibitem{인용12.} 
+    \url{http://mangastorytelling.tistory.com/m/6984}
 
-[11] https://github.com/deepfakes/faceswap
+    \bibitem{인용13.} 
+    \url{https://github.com/shaoanlu/faceswap-GAN}
 
-[12] http://mangastorytelling.tistory.com/m/6984
-
-[13] $https://github.com/shaoanlu/faceswap-GAN$
-
+\end{thebibliography}
+    
 \end{document}
