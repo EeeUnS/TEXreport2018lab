@@ -1,4 +1,4 @@
-\documentclass{oblivoir}
+\documentclass[chapter]{oblivoir}
         
     \usepackage{graphicx}%그림을 업로드하기위한 패키지
 
@@ -18,6 +18,7 @@
     \usepackage{etoolbox}
     \usepackage{url}
     \AtBeginEnvironment{tabu}{\setlist[itemize]{wide = 0pt, leftmargin = *}}
+
 %참고문헌 관련 : http://cfs5.tistory.com/upload_control/download.blog?fhandle=YmxvZzQ5OTI4QGZzNS50aXN0b3J5LmNvbTovYXR0YWNoLzAvMTIwMDAwMDAwMDAwLnBkZg%3D%3D
 % http://wiki.ktug.org/wiki/wiki.php/%EC%B0%B8%EA%B3%A0%EB%AC%B8%ED%97%8C
 % http://www.ptep-online.com/ctan/lshort_korean.pdf
@@ -36,111 +37,147 @@
 %더해야할것 그래픽스,타부, 타이틀 
 
 \begin{document}
+\begin{center}
+	
+	{\scshape\LARGE 최 종 연 구 보 고 서 \par}
+	\vfill
+	{\scshape\Large 연구 제목 \par}
+%	\vspace{1.5cm}
+\vfill
+\vfill
+	{ 부경대학교\par}
+	
+	%{\Large\itshape John Birdwatch\par}
+    \vfill
+    
+	한 국 전 자 통 신 연 구 원
 
+	\vfill
 
-\tableofcontents
+% Bottom of the page
+%    {\large \today\par}
+    
+\end{center}
+
+\newpage
+\begin{center}
+    최 종 연 구 보 고 서
+    \vfill
+    연구 제목
+    \vfill
+    부경대학교
+    \vfill
+    한 국 전 자 통 신 연 구 원
+    \vfill
+    제     출     문
+    \vfill    
+    
+    한국전자통신연구원장  귀하
+    \vfill
+    본 보고서를 연구제목의 최종연구보고서로 제출합니다. 
+    
+\vfill
+2018년 12월 일\par
+\end{center}
+
+\vfill
+\vspace{0.5cm}
+수  탁  기  관 :  부경대학교 산학협력단\par
+\vspace{0.5cm}
+수 탁 기 관 장 :           (인)\par
+\vspace{0.5cm}
+연 구 책 임 자 :  \par
+\vspace{0.5cm}
+참 여 연 구 원 :  \par
+
 \newpage
 
-\listoffigures
-\newpage
 
-\listoftables
-\newpage
+\begin{center}
+    {\scshape\LARGE 요약문 \par}    
+\end{center}
 
-(표  지)
 
-최 종 연 구 보 고 서
-
-연구 제목
-
-부경대학교
-
-한 국 전 자 통 신 연 구 원
-
-(내표지)
-
-최 종 연 구 보 고 서
-
-연구 제목
-
-부경대학교
-
-한 국 전 자 통 신 연 구 원
-
-제     출     문
-
-한국전자통신연구원장  귀하
-
-본 보고서를 연구제목의 최종연구보고서로 제출합니다. 
-
-2018년 12월 일
-
-수  탁  기  관 :  부경대학교 산학협력단
-
-수 탁 기 관 장 :           (인)
-
-연 구 책 임 자 :  
-
-참 여 연 구 원 :  
-
-요     약     문
-
-1. 제   목 : 연구 제목 
-
-2. 연구의 목적 및 중요성
-
-연구의 목적
+{\Large\textbf{1. 제   목 : 연구 제목}  \par}
+\vspace{1cm}
+{ \Large\textbf{2. 연구의 목적 및 중요성} \par}
+\vspace{1cm}
+\textbf{연구의 목적}
 
 얼굴인식 및 얼굴합성 기술을 구현하고 COX 서버에서 네 가지 기술들(Zad,Deepfake,Openpose,GAN)을 동작하게 하고 사용자가 원하는 사진과 영상을 가지고 서버에서 Faceswap이 가능하게 하는 것이다. 
 
 두 번째 목적은 COX Cinema 영상제작자가 만든 영상을 단지 사용자에게 보여주는 단방향적인 방식이 아닌 영상제작자가 사용자에게 여러 선택권을 주고, 사용자로 하여금 영상의 진행을 선택하여 영상을 시청하게 하는 것이 가능하게 하는 것이다. 
 
-전체 연구목표
+\textbf{전체 연구목표}
 
-◎ 얼굴인식 및 얼굴합성 기술의 구현과 COX 서버에서의 기술 작동
+\begin{itemize}
+    \item 얼굴인식 및 얼굴합성 기술의 구현과 COX 서버에서의 기술 작동
 
 세부목표1 : 네 가지 기술(Zad,Openpose,Deepfake,GAN) 구현
 
-◎ 2D-Faceswap(Zad) 모델 기술 구현
+\item 2D-Faceswap(Zad) 모델 기술 구현
 
-◎ Openpose 기술 구현
+\item Openpose 기술 구현
 
-◎ Deepfake(Original-High-Resolution Model) 기술 구현 
+\item Deepfake(Original-High-Resolution Model) 기술 구현 
 
-◎ 생성적 적대 신경망(GAN) 기술 구현 
+\item 생성적 적대 신경망(GAN) 기술 구현 
 
 세부목표 2 : 서버 구축 및 네 가지 Faceswap 기술이 서버에서도 작동되게 하는 것이다.
 
-◎ COX서버 구축 (우분투?)
+\item COX서버 구축 (우분투?)
 
-◎ 네 가지 기술 IN COX Page
+\item 네 가지 기술 IN COX Page
 
 세부목표 3 : COX Cinema 
 
-◎ 사용자의 휴대폰 기기와 웹에서의 영상 사이에 Interactive 기능 삽입
+\item 사용자의 휴대폰 기기와 웹에서의 영상 사이에 Interactive 기능 삽입
+    
+\end{itemize}
 
-연구의 중요성
+\textbf{연구의 중요성}
 
 최근 Face Swap 기술의 관심이 높아지고 있으며 특히 SNOW(NAVER)나 Meitu(중화인민공화국)에서 얼굴 인증 시스템을 이용하여 가공 및 합성하는 뷰티 카메라가 큰 인기를 끌고 있다. Face Swap 기술을 상용화한 COX는 유튜브나 트위치 같은 거대 플랫폼처럼 만들 수 있는 기회가 될 수 있는 교보재가 될 수 있다.
-3. 연구의 내용 및 범위
 
-1) 연구 
-내용
+\vspace{1cm}
+
+{ \Large\textbf{3. 연구의 내용 및 범위}  \par}
+\vspace{0.5cm}
+
+{ \large\textbf{3.1 연구 내용}  \par}
+
+\vspace{0.5cm}
 
 Deep Learning을 이용한 얼굴인식 및 얼굴 합성 기술
 
-2) 연구에 쓰인 범위
+\vspace{0.5cm}
 
-Python (version 3.6) 
-PHP (version 5.6) 
-C++
+{\large\textbf{3.2 연구에 쓰인 범위}  \par}
 
-4. 연  구  결  과
+\begin{itemize}
+   \item  Python (version 3.6) 
+   \item PHP (version 5.6) 
+   \item C++    
+\end{itemize}
 
-COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 가능하게 하였다. 서버에서 돌아가게 만들었으며 실시간으로 사용이 가능하다. 기존의 COX를 구현할 때에는 많은 영상이 있어야 하는데 그러한 단점들을 보완하여, 기존의 영상들을 재사용하고 최신기술을 접목하여 창의적인 영상을 만들 수 있게 하였다.
 
+{\Large\textbf{ 4. 연  구  결  과}  \par}
 
-5. 활용에 대한 건의
+\vspace{0.5cm}
+
+COX 페이지에서 네 가지 기술
+\begin{itemize}
+    \item Zad
+    \item Openpose
+    \item Deepfake
+    \item GAN
+\end{itemize}
+을 구현 가능하게 하였다. 서버에서 돌아가게 만들었으며 실시간으로 사용이 가능하다. 기존의 COX를 구현할 때에는 많은 영상이 있어야 하는데 그러한 단점들을 보완하여, 기존의 영상들을 재사용하고 최신기술을 접목하여 창의적인 영상을 만들 수 있게 하였다.
+
+\vspace{1cm}
+
+{\Large\textbf{ 5. 활용에 대한 건의}  \par}
+\vspace{0.5cm}
 
 본 연구결과는 COX페이지에서 Face Swap이라는 주제로 한 챕터를 차지할 수 있다. 이용자들은 Face Swap을 이용하여 자신이 원하는 영상과 사진으로 Face Swap을 이용할 수 있다.
 
@@ -149,7 +186,10 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 세 번째로는 COX Cinema 플랫폼을 이용하여 교육영상이나 광고에 활용될 수 있다.
 
 
-6. 기  대  효  과
+\vspace{1cm}
+{\Large\textbf{ 6. 기  대  효  과} \par}
+
+\vspace{0.5cm}
 
 본 연구결과는 네 가지 기술의 서버 시스템 상에서의 구현을 통해 여러 가지 기대효과를 얻을 수 있다고 생각하였다. 첫 번째로 기술적 기대효과이다. Rendering 기술과 Deep Learning 기술을 통하여 얼굴 인증 및 합성을 통해 영상을 재사용하는 핵심 기술로 활용되는 것이다.
 두 번째로 기술이전을 통한 기대효과이다. 얼굴인식 / 인증 분야 활용을 통한 다른 외산 제품으로의 수입대체사용 (ex. SNOW, Meitu) Faceswap 기술을 요소 기술로 활용하여 더 나은 이미지와 영상으로의 부가가치 제고를 가능하게 할 수 있다.
@@ -157,64 +197,76 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 세 번째로 경제적 기대 효과이다. 얼굴인식, 얼굴교환기술 분야에서의 활용을 통한 내수 시장을 공략할 수 있을 것으로 기대된다. 뿐만 아니라 결과물 상용화 시점에서 연간 100억(
 모름) 이상의 수출 효과를 낼 수 있을 것으로 보인다.
 
+\newpage
+%\include{summary.tex}
+%\includegraphicx{summary.pdf}
+%\includegraphics{summary.pdf}
+\include{summary.pdf}
 
--   목     차   -
 
-제  1  장 얼굴모양 추출, 얼굴 추적, 얼굴영역 변형 기술 동향 분석
+% -   목     차   -
 
-제  1  절 얼굴교체 기술의 요소기술
+% 제  1  장 얼굴모양 추출, 얼굴 추적, 얼굴영역 변형 기술 동향 분석
 
-제  2  절 얼굴교체 기술 국내외 연구동향
+% 제  1  절 얼굴교체 기술의 요소기술
 
-제  2  장 2D-Faceswap 모델의 기술 분석 및 구현
+% 제  2  절 얼굴교체 기술 국내외 연구동향
 
-제  1  절 2D-Faceswap 모델의 개요와 얼굴 합성 알고리즘 분석
+% 제  2  장 2D-Faceswap 모델의 기술 분석 및 구현
 
-제  2  절 2D-Faceswap 모델의 분석
+% 제  1  절 2D-Faceswap 모델의 개요와 얼굴 합성 알고리즘 분석
 
-제  3  절 2D-Faceswap 모델의 테스트 환경 및 결과
+% 제  2  절 2D-Faceswap 모델의 분석
 
-제  3  장 Openpose를 활용한 Faceswap 모델의 기술 분석 및 구현
+% 제  3  절 2D-Faceswap 모델의 테스트 환경 및 결과
 
-제  1  절 Openpose 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석
+% 제  3  장 Openpose를 활용한 Faceswap 모델의 기술 분석 및 구현
 
-제  2  절 Openpose 얼굴 변형 모델의 테스트 환경 및 결과
+% 제  1  절 Openpose 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석
 
-제  4  장 딥페이크(Original-High-Resolution Model)의 기술 분석 및 구현
+% 제  2  절 Openpose 얼굴 변형 모델의 테스트 환경 및 결과
 
-제  1  절 딥페이크의 개요와 얼굴 합성 알고리즘 분석
+% 제  4  장 딥페이크(Original-High-Resolution Model)의 기술 분석 및 구현
 
-제  2  절 딥페이크 내의 모델 분석
+% 제  1  절 딥페이크의 개요와 얼굴 합성 알고리즘 분석
 
-제  3  절 딥페이크 모델의 테스트 환경 및 결과
+% 제  2  절 딥페이크 내의 모델 분석
 
-제  5  장 생성적 적대 신경망(GAN)을 활용한 Faceswap 모델의 기술 분석 및 구현
+% 제  3  절 딥페이크 모델의 테스트 환경 및 결과
 
-제  1  절 GAN을 활용한 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석
+% 제  5  장 생성적 적대 신경망(GAN)을 활용한 Faceswap 모델의 기술 분석 및 구현
 
-제  2  절 GAN을 활용한 얼굴 변형 모델 분석
+% 제  1  절 GAN을 활용한 얼굴 변형 모델의 개요와 얼굴 합성 알고리즘 분석
 
-제  3  절 GAN을 활용한 얼굴 변형 모델의 테스트 환경 및 결과
+% 제  2  절 GAN을 활용한 얼굴 변형 모델 분석
 
-제  6  장 서버(Server)를 통한 위 네 가지 기술의  연결 과정?구현? 및 결과  
+% 제  3  절 GAN을 활용한 얼굴 변형 모델의 테스트 환경 및 결과
 
-제  1  절 구현한 서버 
+% 제  6  장 서버(Server)를 통한 위 네 가지 기술의  연결 과정?구현? 및 결과  
 
-제  2  절 2D-Faceswap 모델 코드 분석
+% 제  1  절 구현한 서버 
 
-제  3  절 Openpose 를 활용한 Faceswap 모델 코드 분석
+% 제  2  절 2D-Faceswap 모델 코드 분석
 
-제  4  절 딥페이크(Original-High-Resolution Model) 코드 분석
+% 제  3  절 Openpose 를 활용한 Faceswap 모델 코드 분석
 
-제  5  절 생성적 적대 신경망(GAN) 코드 분석
+% 제  4  절 딥페이크(Original-High-Resolution Model) 코드 분석
 
-제  7  장 COX 서버 구축 및 OOO(형식) 광고 동영상 제작 및 업로드
+% 제  5  절 생성적 적대 신경망(GAN) 코드 분석
 
-제  1  절 COX 서버 설명
+% 제  7  장 COX 서버 구축 및 OOO(형식) 광고 동영상 제작 및 업로드
 
-제  2  절 
+% 제  1  절 COX 서버 설명
 
-제  3  절 
+% 제  2  절 
+
+% 제  3  절 
+
+\tableofcontents
+\newpage
+
+\listoftables
+\newpage
 
 \chapter{얼굴모양 추출, 얼굴 추적, 얼굴영역 변형 기술 동향 분석 }
 
@@ -323,7 +375,7 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
 \begin{figure}[h!]
 \centering
-\includegraphics{pic/chp1/img497}
+\includegraphics[scale = 0.7]{pic/chp1/img497}
 \caption{ 시기 별 기술과 정확도(LFW) \cite{reference6}}
 \end{figure}
 
@@ -339,8 +391,7 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
     \begin{figure}[h!]
         \centering
-        \includegraphics{pic/chp1/img522}
-        \caption{시기 별 기술과 정확도(LFW) \cite{reference6}}
+        \includegraphics[scale = 0.7]{pic/chp1/img522}
     \end{figure}
 
     \item 서강대학교 : 
@@ -352,8 +403,7 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
     \begin{figure}[h!]
         \centering
-        \includegraphics{pic/chp1/img523}
-        \caption{시기 별 기술과 정확도(LFW) \cite{reference6}}
+        \includegraphics[scale = 0.7]{pic/chp1/img523}
     \end{figure}
 
     \item Joint Face Detection and Alignment Using Multitask Cascaded Convolutional Networks : 
@@ -365,8 +415,7 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
     \begin{figure}[h!]
         \centering
-        \includegraphics{pic/chp1/img530}
-        \caption{ 시기 별 기술과 정확도(LFW)\cite{reference6}}
+        \includegraphics[scale = 0.7]{pic/chp1/img530}
     \end{figure}
 
     \item HyperFace: A Deep Multi-Task Learning Framework for Face Detection, Landmark Localization, Pose Estimation, and Gender Recognition : 
@@ -377,8 +426,7 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
 
     \begin{figure}[h!]
         \centering
-        \includegraphics{pic/chp1/img552}
-        \caption{시기 별 기술과 정확도(LFW)\cite{reference6}}
+        \includegraphics[scale = 0.7]{pic/chp1/img552}
     \end{figure}
 
     \item Faceness-Net: Face Detection through Deep Facial Part Responses : 
@@ -387,12 +435,6 @@ COX 페이지에서 네 가지 기술( Zad ,Openpose ,Deepfake, GAN) 을 구현 
     관련 그림과 같이 총 2가지 stage로 나뉘어져 있다. 첫번째 단계는 각각 다른 얼굴 부위(머리, 눈, 코, 입, 턱)에서의 반응 맵을 생성가능한 CNN으로 이루어져있다. 
     각각의 반응 맵은 특정 부위의 영역에 맞게 활성화되어 있음을 볼 수 있다. 
     두번째 단계는 MTCNN을 통해 얼굴 분류, Bounding box regression을 최적화하여 최종적으로 얼굴의 위치를 검출합니다. 
-
-    \begin{figure}[h!]
-        \centering
-        \includegraphics{pic/chp1/img593}
-        \caption{시기 별 기술과 정확도(LFW)\cite{reference6}}
-    \end{figure}
 
 \end{enumerate}
 
@@ -460,7 +502,7 @@ CNN
 
 \begin{figure}[h!]
   \centering
-    \includegraphics{pic/chp1/img594}
+    \includegraphics[scale = 0.7]{pic/chp1/img594}
   \caption{연도 별 연구 동향 \cite{reference6}}
 \end{figure}
 
@@ -479,7 +521,7 @@ CNN
 
 \begin{figure}[h!]
     \centering
-      \includegraphics{pic/chp1/imgnaver}
+      \includegraphics[scale = 0.5]{pic/chp1/imgnaver}
     \caption{ GAN을 활용한 네이버 웹툰 ‘마주쳤다’ \protect\footnote{출처: 네이버랩스}}
 \end{figure}
 
@@ -488,7 +530,7 @@ CNN
 
 \begin{figure}[h!]
     \centering
-      \includegraphics{pic/chp1/img612}
+      \includegraphics[scale = 0.5]{pic/chp1/img612}
     \caption{  버락 오바마 전 미국 대통령의 가짜 영상 \protect\footnote{출처: 워싱턴대학교}}
 \end{figure}
 
@@ -497,7 +539,7 @@ CNN
 
 \begin{figure}[h!]
     \centering
-      \includegraphics{pic/chp1/img613}
+      \includegraphics[scale = 0.7]{pic/chp1/img613}
     \caption{ GAN Architecture\cite{reference5}}
 \end{figure}
 
@@ -515,7 +557,7 @@ CNN
 
     \begin{figure}[h!]
         \centering
-          \includegraphics{pic/chp1/img669}
+          \includegraphics[scale = 0.8]{pic/chp1/img669}
         \caption{Face 연구용 데이터의 변화 \cite{reference6}}
     \end{figure}
 
@@ -554,15 +596,25 @@ CNN
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \begin{figure}[h!]
 \centering
-%%\includegraphics{pic/chp7/}
-\caption{ 
-Candide-1
-Candide-2
-Candide-3
-The different versions of Candide (click for larger images).}
+\includegraphics{pic/chp2/img690}
+\includegraphics{pic/chp2/img693}
+\caption{Candide-1}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics{pic/chp2/img694}
+    \includegraphics{pic/chp2/img695}
+    \caption{Candide-2}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics{pic/chp2/img696}
+    \includegraphics{pic/chp2/img697}
+    \caption{Candide-3}
+\end{figure}
 
 이를 이용하여 얻어진 각 정점과 삼각형에 맞도록 2D 이미지 데이터를 3D 이미지 데이터로 변환시켜 학습된 모델을 통하여 fitting 시키게 되면 각 프레임 별로 결과가 나오는 것이다.
 
@@ -633,13 +685,14 @@ Openpose는 고가의 센서 장비가 필요한 기존의 모델들과는 달�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \begin{figure}[h!]
 \centering
-%%\includegraphics{pic/chp7/}
+\includegraphics{pic/chp3/img761}
+\includegraphics{pic/chp3/img762}
 \caption{태깅 된 인체 스켈레톤 데이터}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \begin{figure}[h!]
   \centering
-    \includegraphics{pic/chp3/img763}
+    \includegraphics[scale = 0.5]{pic/chp3/img763}
   \caption{Openpose의 네트워크 구조\cite{reference10}}
 \end{figure}
 
@@ -650,7 +703,7 @@ vgg-19 네트워크를 통과한 후 Stage 1 ~ Stage 6에서는 실제 정답인
 
 \begin{figure}[h!]
   \centering
-    \includegraphics{pic/chp3/img765}
+    \includegraphics[scale = 0.7]{pic/chp3/img765}
   \caption{Openpose의 학습 과정\cite{reference10}}
 \end{figure}
 
@@ -679,8 +732,9 @@ Openpose를 앞선 모델에 추가함으로써 얼굴 변형에 더 많은 70�
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 \begin{figure}[h!]
   \centering
- %   %\includegraphics{pic/chp7/}
-  \caption{원 이미지(좌), 얼굴 변형 된 이미지(우)}
+        \includegraphics{pic/chp3/img778}
+        \includegraphics{pic/chp3/img779}
+  \caption{원 이미지(위), 얼굴 변형 된 이미지(아래)}
 \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
 
@@ -744,7 +798,7 @@ ADAM이란 기존의 최적화 알고리즘의 아이디어가 발전과 개선�
 
 \begin{figure}[h!]
 \centering
-\includegraphics{pic/chp4/img838}
+\includegraphics[scale = 0.7]{pic/chp4/img838}
 \end{figure}
 
 \section{ 딥페이크 모델의 테스트 환경 및 결과}
@@ -759,12 +813,12 @@ ADAM이란 기존의 최적화 알고리즘의 아이디어가 발전과 개선�
 
 \begin{figure}[h!]
 \centering
-\includegraphics{pic/chp4/img845}
+\includegraphics[scale = 0.5]{pic/chp4/img845}
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-\includegraphics{pic/chp4/img846}
+\includegraphics[scale = 0.5]{pic/chp4/img846}
 \end{figure}
 
 \chapter{ 생성적 적대 신경망(GAN)을 활용한 Faceswap 모델의 기술 분석 및 구현}
@@ -821,7 +875,7 @@ GAN을 이용한 얼굴 변형 모델\cite{reference11}을 이용하였다.
 
     \begin{figure}[h!]
       \centering
-        \includegraphics{pic/chp5/img882}
+        \includegraphics[scale = 0.7]{pic/chp5/img882}
       \caption{MTCNN 논문참고}
     \end{figure}
 
@@ -831,7 +885,7 @@ GAN을 이용한 얼굴 변형 모델\cite{reference11}을 이용하였다.
 
     \begin{figure}[h!]
       \centering
-       % \includegraphics{pic/chp5/img885}
+        \includegraphics{pic/chp5/img885}
       \caption{MTCNN의 P-Net, R-Net, Q-Net}
     \end{figure}
 
@@ -881,7 +935,8 @@ GAN을 이용한 얼굴 변형 모델\cite{reference11}을 이용하였다.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%v
     \begin{figure}[h!]
     \centering
-    %%\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp5/img896}
+    \includegraphics{pic/chp5/img897}
     \caption{생성자 신경망 구조 \cite{reference11}}
     \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -905,8 +960,9 @@ GAN을 이용한 얼굴 변형 모델\cite{reference11}을 이용하였다.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \begin{figure}[h!]
     \centering
-    %%\includegraphics{pic/chp7/}
-    \caption{원 이미지(좌), 얼굴 변형 된 이미지(우)}
+        \includegraphics{pic/chp5/img907}
+        \includegraphics{pic/chp5/img908}
+    \caption{원 이미지(위), 얼굴 변형 된 이미지(아래)}
     \end{figure}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -916,7 +972,6 @@ GAN을 이용한 얼굴 변형 모델\cite{reference11}을 이용하였다.
 
 \section{ 서버설명 + cox 페이지 설명}
 
-\newpage
 
 \begin{figure}[h!]
     \centering
@@ -1262,13 +1317,13 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
 \begin{figure}[h!]
 \centering
-%\includegraphics{pic/chp7/}
+\includegraphics{pic/chp7/img1004}
 \caption{Android 화면 – Branch }
 \end{figure}
 
 \begin{figure}[h!]
 \centering
-%\includegraphics{pic/chp7/}
+\includegraphics{pic/chp7/img1003}
 \caption{Web 화면 – Branch 기능}
 \end{figure}
 
@@ -1290,12 +1345,12 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1001}
     \caption{android 화면 - push}
     \end{figure}
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1002}
     \caption{web 화면 - push}
     \end{figure}
 
@@ -1305,19 +1360,19 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1013}
     \caption{android 화면 – pushlink}
     \end{figure}
 
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1014}
     \caption{android 화면 – pushlink 2}
     \end{figure}
 
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1015}
     \caption{web 화면 – pushlink}
     \end{figure}
 
@@ -1332,14 +1387,14 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1018}
     \caption{Web 화면 – Call}
     \end{figure}
 
 
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1017}
     \caption{android 화면 – Call}
     \end{figure}
 
@@ -1350,13 +1405,13 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1028}
     \caption{android 화면 – Image}
     \end{figure}
 
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1029}
     \caption{web 화면 – Image}
     \end{figure}
 
@@ -1367,12 +1422,12 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
     영상제작자가 사용자에게 모바일 기기를 움직이게 하여 영상에 참여하도록 유도하는 기능
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
-    \caption{web 화면 – Motion}
+    \includegraphics{pic/chp7/img1030}
+    \caption{android 화면 – Motion}
     \end{figure}
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp7/img1031}
     \caption{web 화면 – Motion}
     \end{figure} 
 
@@ -1382,13 +1437,7 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
     \begin{figure}[h!]
     \centering
-    %\includegraphics{pic/chp7/}
-    \caption{web 화면 – product}
-    \end{figure} 
-
-    \begin{figure}[h!]
-    \centering
-    %\includegraphics{pic/chp7/}
+    \includegraphics{pic/chp78/img1123}
     \caption{web 화면 – product}
     \end{figure} 
 
@@ -1426,6 +1475,8 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
     \end{figure} 
 
 \end{enumerate}
+
+\newpage
 
 \section{ COX Cinema로 만든 영상 예시의 실행환경 및 결과 }
 
@@ -1469,14 +1520,14 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
         \begin{figure}[h!]
             \centering
-        %\includegraphics{pic/chp7/}
-            \caption{web 화면 – Vote}
+        \includegraphics{pic/chp78/img1081}
+            \caption{web 화면 – Branch}
         \end{figure} 
 
         \begin{figure}[h!]
             \centering
-        %\includegraphics{pic/chp7/}
-            \caption{web 화면 – Vote}
+        \includegraphics{pic/chp78/img1082}
+            \caption{web 화면 – Branch}
         \end{figure} 
 
         여자주인공이 배가 고프니, 밥을 먹으러 가자는 메시지를 받고나서 어떤 음식을 먹을지 선택을 하도록 하기 위하여 사용한 Branch 기능이다. 이제 COX 애플리케이션을 사용하는 모바일 기기 사용자는 이 기능으로 하여금 어떻게 이야기를 전개할 것인지 선택을 할 수 있게 된다. 
@@ -1485,8 +1536,8 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
         \begin{figure}[h!]
             \centering
-        %\includegraphics{pic/chp7/}
-            \caption{web 화면 – Vote}
+        \includegraphics{pic/chp78/img1094}
+            \caption{android 화면 – Push}
         \end{figure} 
 
     이 기능은 앞서 ‘가.’ 에서 언급되었던 메시지이다. 여자 주인공이 운동을 하다가 휴대폰에 온 이 메시지를 보고서 어떤 메뉴를 먹을 것인지 선택하게 된다. 모바일 애플리케이션 사용자는 기기로 이 메시지를 받게 된다.
@@ -1495,8 +1546,8 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
         
         \begin{figure}[h!]
             \centering
-        %\includegraphics{pic/chp7/}
-            \caption{web 화면 – Vote}
+        \includegraphics{pic/chp78/img1095}
+            \caption{android 화면 – PUSH LINK}
         \end{figure} 
 
     치킨 메뉴에서 여자주인공과 남자주인공들이 치킨을 먹는 중에 모바일 기기 사용자로 하여금 극중 여자 주인공이 치킨을 먹으면서 입고 있는 옷의 정보를 이 기능으로 제공해줄 수 있다. 위의 사진에서 YES 버튼을 누르게 되면 옷의 정보가 담긴 인터넷 URL로 자동으로 접속이 되며 인터넷 창이 뜨게 된다.
@@ -1505,13 +1556,13 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
         \begin{figure}[h!]
             \centering
-        %\includegraphics{pic/chp7/}
+        \includegraphics{pic/chp78/img1106}
             \caption{web 화면 – Vote}
         \end{figure} 
 
         \begin{figure}[h!]
             \centering
-        %\includegraphics{pic/chp7/}
+        \includegraphics{pic/chp78/img1106}
             \caption{web 화면 – Vote}
         \end{figure} 
 
@@ -1521,14 +1572,14 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
 
         \begin{figure}[h!]
             \centering
-        %\includegraphics{pic/chp7/}
-            \caption{web 화면 – Vote}
+        \includegraphics{pic/chp78/img1108}
+            \caption{web 화면 – MOTION}
         \end{figure} 
 
         \begin{figure}[h!]
             \centering
-        %\includegraphics{pic/chp7/}
-            \caption{web 화면 – Vote}
+        \includegraphics{pic/chp78/img1107}
+            \caption{web 화면 – MOTION}
         \end{figure} 
 
 
@@ -1540,8 +1591,8 @@ COX Cinema에서 쓰이는 기능 중 하나인 Branch Service는 제작자가 �
         
         \begin{figure}[h!]
             \centering
-        %\includegraphics{pic/chp7/}
-            \caption{web 화면 – Vote}
+        \includegraphics{pic/chp78/img1123}
+            \caption{web 화면 – Product}
         \end{figure} 
 
     마지막으로 이 기능은 치킨 메뉴의 줄거리가 전개될 때에 사용자가 치킨이 먹고 싶어지겠다는 생각이 들 때 즈음, 곧바로 주문을 할 수 있게 끔 해주는 기능이다. 어떤 영상을 보고 있을 때 내가 보는 영상에서 사고 싶은 혹은 먹고 싶은 것을 손쉽게 구매할 수 있게 하는 기능은 어떤 기능보다도 광고효과를 비롯해 구매 욕구를 불러일으킬 수 있다. 사용자(소비자) 입장에서도 손쉽게 구매를 할 수 있다는 점에서 효율적이고 편리한 기능이라고 할 수 있다.
